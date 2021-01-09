@@ -147,7 +147,7 @@ ol.alternating li:nth-child(even) { background-color: #e0e0e0; }
 input { max-width: 100%; }
 
 @media screen and (max-width: 700px) {
-	.flex-container { flex-direction: column; }
+	.flex-container { flex-direction: column-reverse; }
 	nav {
 		flex-direction: row;
 		flex-wrap: wrap;
