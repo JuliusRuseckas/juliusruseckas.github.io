@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Calculator</title>
+
+<style>
+textarea { border: 1px solid black; width: 100%; }
+ol li { color: blue;}
+pre { color: black; margin-top: 0pt; margin-bottom: 0pt; margin-right: 1em;
+	overflow: auto; }
+@media all and (-webkit-min-device-pixel-ratio: 0) {
+pre {overflow: visible;}
+}
+pre.output { background-color: #e0e0e0; }
+pre.error { background-color: #e0e0e0; color: red; }
+a.control { color: blue; text-decoration: none; font-size: smaller;
+	font-family: sans-serif; float: right; clear: right; }
+</style>
+
+<script src="calc.js"></script>
+<noscript>
+<b>JavaScript is required for calculator.</b>
+<hr>
+</noscript>
+</head>
+<body>
+
+<header>
+	<h1>Calculator</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+
+<ol id="historyList">
+</ol>
+
+<form name="calcForm" onSubmit="return false">
+	<textarea name="inputArea" rows="10" cols="80" autofocus onKeyDown="handleKey(event)"></textarea><br>
+	<input type="button" name="clearButton" value="Clear" onClick="clearAll()" style="width: 10em;">
+	<input type="button" name="saveButton" value="Save" onClick="saveHistory()">
+</form>
+
+<h2>Help</h2>
+
+<p><kbd>Enter</kbd> performs calculation.</p>
+<p><kbd>Shift+Enter</kbd> inserts new line.</p>
+<p>Variable <var>_</var> holds the result of previous calculation.</p>
+<p><b>Mathematical constants:</b> E LN2 LN10 LOG2E LOG10E PI SQRT1_2 SQRT2 DEG</p>
+<p><b>Physical constants:</b>	SpeedOfLight PlanckConstant hbar ElectronMass ProtonMass
+ElementaryCharge FineStructureConstant MagneticConstant ElectricConstant ImpedanceOfVacuum
+AvogadroConstant BoltzmannConstant MolarGasConstant AtomicMassUnit StefanBoltzmannConstant
+GravitationalConstant StandardAcceleration</p>
+<p><b>Functions:</b> exp() log() sqrt() pow() sinc()
+abs() ceil() floor() round() max() min() random()</p>
+<p><b>Trigonometric functions:</b> sin() cos() tan() cot() csc() sec()
+asin() acos() atan() atan2() acot() acsc() asec()</p>
+<p><b>Hyperbolic functions:</b> sinh() cosh() tanh() coth() csch() sech()
+asinh() acosh() atanh() acoth() acsch() asech()</p>
+
+<h2>Tips</h2>
+
+Any JavaScript expression can be used. This expression is eval'ed and the result is displayed.<br>
+To define a variable:
+<pre>x = 100</pre></li>
+To define a function:
+<pre>square = function(x) { return x*x }</pre>
+To format a number using fixed-point notation:
+<pre>_.toFixed(6)</pre>
+To convert a number into an exponential notation:
+<pre>_.toExponential()</pre>
+Loops:
+<pre>sum = 0; for (let i=0; i<=5; i++) sum += i</pre>
+
+</section>
+
+<nav>
+	<a href="index.html">Main</a>
+	<a href="cv.html">Curriculum Vitae</a>
+	<a href="publications.html">List of Publications</a>
+	<a href="slides.html">Slides and Posters</a>
+	<a href="links.html">Links</a>
+</nav>
+</div>
+
+</body>
+</html>
