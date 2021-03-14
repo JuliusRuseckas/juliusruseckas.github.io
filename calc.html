@@ -7,16 +7,15 @@
 <title>Calculator</title>
 
 <style>
-textarea { border: 1px solid black; width: 100%; }
-ol li { color: blue;}
-pre { color: black; margin-top: 0pt; margin-bottom: 0pt; margin-right: 1em;
+ol li { color: #a0a0ff;}
+pre { color: #d8d8d8; margin-top: 0pt; margin-bottom: 0pt; margin-right: 1em;
 	overflow: auto; }
 @media all and (-webkit-min-device-pixel-ratio: 0) {
 pre {overflow: visible;}
 }
-pre.output { background-color: #e0e0e0; }
-pre.error { background-color: #e0e0e0; color: red; }
-a.control { color: blue; text-decoration: none; font-size: smaller;
+pre.output { background-color: #404040; }
+pre.error { background-color: #404040; color: #ff8080; }
+a.control { color: #a0a0ff; text-decoration: none; font-size: smaller;
 	font-family: sans-serif; float: right; clear: right; }
 </style>
 
@@ -42,7 +41,7 @@ a.control { color: blue; text-decoration: none; font-size: smaller;
 <form name="calcForm" onSubmit="return false">
 	<textarea name="inputArea" rows="10" cols="80" autofocus onKeyDown="handleKey(event)"></textarea><br>
 	<input type="button" name="clearButton" value="Clear" onClick="clearAll()" style="width: 10em;">
-	<input type="button" name="saveButton" value="Save" onClick="saveHistory()">
+	<input type="button" name="saveButton" value="Save" onClick="saveHistory()" style="width: 10em;">
 </form>
 
 <h2>Help</h2>

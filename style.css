@@ -35,17 +35,17 @@
 }
 
 body {
-	background-color: white;
-	color: #333;
+	background-color: #282a2b;
+	color: #d8d8d8;
 	margin: 0;
 	line-height: 140%;
 	font-family: 'Open Sans', sans-serif;
 }
 
 a { text-decoration: none; }
-a:link {color: #03F;}
-a:visited { color: #009; }
-a:active { color: #C00; }
+a:link {color: #a0a0ff;}
+a:visited { color: #8080ff; }
+a:active { color: #ff8080; }
 a:hover { text-decoration: underline; }
 
 a.language {
@@ -56,8 +56,8 @@ a.language {
 h1 {
 	padding-top: 2rem;
 	margin: 0 auto 3rem auto;
-	background-color: white;
-	color: #333;
+	background-color: #282a2b;
+	color: #d8d8d8;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	font-size: 400%;
@@ -90,14 +90,14 @@ nav a {
 	font-weight: normal;
 	padding: 0 1em 2em 0;
 }
-nav a:link, nav a:visited { color: #333; }
+nav a:link, nav a:visited { color: #d8d8d8; }
 nav a.active, nav a:hover {
-	color: #666;
+	color: white;
 	text-decoration: none;
 }
 
 section {
-	background-color: white;
+	background-color: #282a2b;
 	padding: 0 1em;
 	margin-left: auto;
 	margin-right: auto;
@@ -142,9 +142,28 @@ ul.spaced { line-height: 200%; }
 
 ol { margin: 0; }
 ol li { margin-bottom: 1em; }
-ol.alternating li:nth-child(even) { background-color: #e0e0e0; }
+ol.alternating li:nth-child(even) { background-color: #404040; }
 
 input { max-width: 100%; }
+input, select, textarea {
+	appearance: none;
+	border: none;
+	border-radius: 4px;
+	padding: 8px;
+	color: #d8d8d8;
+	background-color: #404040;
+
+}
+input[type=submit], input[type=button] {box-shadow: 2px 2px rgba(0, 0, 0, 0.4)}
+input[type=submit]:active, input[type=button]:active {
+	background-color: #282a2b;
+	box-shadow: inset -1px -1px rgba(255, 255, 255, 0.4)
+}
+textarea {
+	width: 100%;
+	resize: none;
+	margin-bottom: 10px;
+}
 
 @media screen and (max-width: 700px) {
 	.flex-container { flex-direction: column-reverse; }
