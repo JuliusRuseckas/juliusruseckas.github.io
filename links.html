@@ -17,109 +17,20 @@
 <section>
 
 <h2>Search</h2>
-<table>
-<form action="https://www.google.com/search">
-<tr>
-	<td>
-		<a href="https://www.google.com/">Google</a>
-	</td>
-	<td>
-		<input type="search" name="q" size="40">
-	</td>
-	<td>
-		<input type="submit" value="Search">
-	</td>
-</tr>
-</form>
-<form action="https://en.wikipedia.org/wiki/Special:Search">
-<tr>
-	<td>
-		<a href="https://en.wikipedia.org/">Wikipedia</a>
-	</td>
-	<td>
-		<input type="search" name="search" size="40">
-	</td>
-	<td>
-		<input type="submit" value="Search">
-	</td>
-</tr>
-</form>
-<form method="GET" action="https://arxiv.org/search/">
-<tr>
-	<td>
-		<a href="https://arxiv.org/">arXiv.org</a>
-	</td>
-	<td>
-		<input type="search" name="query" size="40">
-	</td>
-	<td>
-		<select name="searchtype"> 
-			<option value="all" selected="selected">All papers</option> 
-			<option value="ti">Titles</option> 
-			<option value="au">Authors</option> 
-			<option value="abs">Abstracts</option> 
-			<option value="ft">Full text</option> 
-			<option value="help">Help pages</option> 
-		</select> 
-		<input type="submit" value="Go">
-	</td>
-</tr>
-</form>
-<form action="https://scholar.google.com/scholar">
-<tr>
-	<td>
-		<a href="https://scholar.google.com/">Google Scholar</a>
-	</td>
-	<td>
-		<input type="search" name="q" size="40">
-	</td>
-	<td>
-		<input type="submit" value="Search">
-	</td>
-</tr>
-</form>
-<form action="https://datasetsearch.research.google.com/search">
-<tr>
-	<td>
-		<a href="https://datasetsearch.research.google.com/">Dataset Search</a>
-	</td>
-	<td>
-		<input type="search" name="query" size="40">
-	</td>
-	<td>
-		<input type="submit" value="Search">
-	</td>
-</tr>
-</form>
-<form method="POST" action="https://dx.doi.org/">
-<tr>
-	<td>
-		<a href="https://dx.doi.org/">Resolve a DOI</a>
-	</td>
-	<td>
-		<input type="text" name="hdl" size="40">
-	</td>
-	<td>
-		<input type="submit" value="Go">
-	</td>
-</tr>
-</form>
-<form action="https://translate.google.com/">
-<tr>
-	<td>
-		<a href="https://translate.google.com/">Google Translate</a>
-	</td>
-	<td>
-		<input type="hidden" name="sl" value="en">
-		<input type="hidden" name="tl" value="lt">
-		<input type="text" name="text" size="40">
-	</td>
-	<td>
-		<input type="submit" value="Translate">
-	</td>
-</tr>
-</form>
-</table>
+<form action="https://www.google.com/search"><a href="https://www.google.com/">Google</a><input type="search" name="q" size="40"><button type="submit">Search</button></form>
+<form action="https://en.wikipedia.org/wiki/Special:Search"><a href="https://en.wikipedia.org/">Wikipedia</a><input type="search" name="search" size="40"><button type="submit">Search</button></form>
+<form method="GET" action="https://arxiv.org/search/"><a href="https://arxiv.org/">arXiv.org</a><input type="search" name="query" size="40"><select name="searchtype">
+    <option value="all" selected="selected">All papers</option>
+    <option value="ti">Titles</option>
+    <option value="au">Authors</option>
+    <option value="abs">Abstracts</option>
+    <option value="ft">Full text</option>
+    <option value="help">Help pages</option>
+  </select><button type="submit">Go</button></form>
+<form action="https://scholar.google.com/scholar"><a href="https://scholar.google.com/">Google Scholar</a><input type="search" name="q" size="40"><button type="submit">Search</button></form>
+<form action="https://datasetsearch.research.google.com/search"><a href="https://datasetsearch.research.google.com/">Dataset Search</a><input type="search" name="query" size="40"><button type="submit">Search</button></form>
+<form method="POST" action="https://dx.doi.org/"><a href="https://dx.doi.org/">Resolve a DOI</a><input type="text" name="hdl" size="40"><button type="submit">Go</button></form>
+<form action="https://translate.google.com/"><a href="https://translate.google.com/">Google Translate</a><input type="hidden" name="sl" value="en"><input type="hidden" name="tl" value="lt"><input type="text" name="text" size="40"><button type="submit">Translate</button></form>
 
 <h2>Tools</h2>
 <ul>
