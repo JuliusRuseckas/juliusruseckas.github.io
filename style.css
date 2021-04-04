@@ -146,14 +146,14 @@ ol.alternating li:nth-child(even) { background-color: #404040; }
 
 input, select, textarea, button {
 	appearance: none;
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 	border: none;
 	border-radius: 4px;
 	padding: 8px;
 	color: #d8d8d8;
 	background-color: #404040;
-  margin: 0.4em;
-  font: inherit;
+	margin: 0 0.8em 0.8em 0;
+	font: inherit;
 }
 button {box-shadow: 2px 2px rgba(0, 0, 0, 0.4)}
 button:active {
@@ -162,13 +162,12 @@ button:active {
 }
 textarea {
 	width: 100%;
-	resize: none;
-	margin-bottom: 10px;
+	box-sizing: border-box;
 }
 form a {
-  display: inline-block;
-  width: 8em;
-  margin-left: 0.4em;
+	display: inline-block;
+	width: 8em;
+	margin-left: 0.4em;
 }
 
 @media screen and (max-width: 700px) {
