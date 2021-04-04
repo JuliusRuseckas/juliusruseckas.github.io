@@ -167,7 +167,7 @@ textarea {
 form a {
 	display: inline-block;
 	width: 8em;
-	margin-left: 0.4em;
+	margin-right: 0.8em;
 }
 
 @media screen and (max-width: 700px) {
