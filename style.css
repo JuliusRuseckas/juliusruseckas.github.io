@@ -43,7 +43,7 @@ body {
 }
 
 a { text-decoration: none; }
-a:link {color: #a0a0ff;}
+a:link {color: #a0a0ff; }
 a:visited { color: #8080ff; }
 a:active { color: #ff8080; }
 a:hover { text-decoration: underline; }
@@ -183,4 +183,32 @@ form a {
 		padding-right: 0;
 		border-right-style: none;
 	}
+}
+
+@media print {
+	a.language { display: none; }
+	nav { display: none; }
+	@page { margin: 2cm; }
+	body {
+		background-color: #fff;
+		color: #000;
+		font-size: 12pt;
+	}
+	h1 {
+		background-color: #fff;
+		color: #000;
+		font-size: 300%;
+	}
+	h2 { font-size: 150%; }
+	h3 { font-size: 100%; }
+	section {
+		background-color: #fff;
+		max-width: 100%;
+	}
+	a:link, a:visited { color: #000; }
+	ol.alternating li:nth-child(even) { background-color: #eee; }
+	th { white-space: nowrap; }
+	li { break-inside: avoid; }
+	h1, h2, h3 { break-after: avoid; }
+	ul, ol { break-before:avoid; }
 }
