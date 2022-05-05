@@ -9,8 +9,13 @@
 
 
 <style type="text/css">
-    .highlight .hll { background-color: var(--jp-cell-editor-active-background) }
-.highlight  { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
+    pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: var(--jp-cell-editor-active-background) }
+.highlight { background: var(--jp-cell-editor-background); color: var(--jp-mirror-editor-variable-color) }
 .highlight .c { color: var(--jp-mirror-editor-comment-color); font-style: italic } /* Comment */
 .highlight .err { color: var(--jp-mirror-editor-error-color) } /* Error */
 .highlight .k { color: var(--jp-mirror-editor-keyword-color); font-weight: bold } /* Keyword */
@@ -14633,7 +14638,7 @@ Files already downloaded and verified
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">solve_linear</span><span class="p">(</span><span class="n">HH</span><span class="p">,</span> <span class="n">HY</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">α</span><span class="o">=</span><span class="mf">0.</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="n">HH</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">HH_reg</span> <span class="o">=</span> <span class="n">HH</span> <span class="o">+</span> <span class="n">α</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">DEVICE</span><span class="p">)</span> <span class="c1"># add regularization</span>
+    <span class="n">HH_reg</span> <span class="o">=</span> <span class="n">HH</span> <span class="o">+</span> <span class="n">α</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span> <span class="c1"># add regularization</span>
     <span class="n">sol</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">HH_reg</span><span class="p">,</span> <span class="n">HY</span><span class="p">)</span>
     <span class="n">B</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">solution</span>
     <span class="k">return</span> <span class="n">B</span>
