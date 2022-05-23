@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Simple object detector</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>simple-detector</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14614,7 +14614,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For each cell in the output model proposes a bounding box with the center in that cell
+<p>For each cell in the output the model proposes a bounding box with the center in that cell
 and a prediction of IoU between proposed box and ground truth.</p>
 
 </div>
@@ -14651,7 +14651,8 @@ $$
 whereas $\mathcal{L}_{\mathrm{iou}}$ maximizes IoUs of proposed bounding boxes
 $$
 \mathcal{L}_{\mathrm{geom}} = 1-\sum_{b\in\mathrm{boxes}}\mathrm{IoU}_b
-$$</p>
+$$
+Ground truth box with largest IoU is assigned to the predicted bounding box.</p>
 
 </div>
 </div>
@@ -15921,7 +15922,7 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Pad ground truth bounding boxes to allow a formation of batch tensor.</p>
+<p>Pad ground truth bounding boxes to allow formation of a batch tensor.</p>
 
 </div>
 </div>
