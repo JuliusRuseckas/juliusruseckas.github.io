@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>The postulates of quantum mechanics</title>
+</head>
+<body>
+
+<header>
+	<h1>The postulates of quantum mechanics</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+  <h3>Postulate 1</h3>
+  <p>
+  Two closed quantum systems are in the same <i>state</i> when they where prepared using the same macroscopic (classical), surrounding.
+  Technically this means that the results of measuring a complete set of communting measurements are the same for both systems.
+  </p>
+  <p>
+  <b>Postulate 1.</b> To any closed quantum system is associated a ray in a Hilbert space (complex vector space with inner product).
+  </p>
+  <p>
+  In Dirac's notation vectors in the Hilbert space are denoted as \(|\psi\rangle\).
+  </p>
+
+  <h3>Postulate 2</h3>
+  <p>
+  The state of a closed quantum system changes in time according to a unitary transformation. 
+  The state \(|\psi (t')\rangle\) at time \(t'\) is related to the
+  state \(|\psi (t)\rangle\) the system at time \(t\) by a unitary operator \(U\) which depends only on
+  the times \(t'\) and \(t\),
+  \[
+  |\psi (t')\rangle = U(t', t)|\psi (t)\rangle\,.
+  \]
+  </p>
+  <p>
+  Equivalently, infinitesimal time evolution of the state of a closed quantum system is described by the Schrödinger equation
+  \[
+  \mathrm{i}\hbar\frac{\partial}{\partial t}|\psi (t)\rangle = H(t)|\psi (t)\rangle\,,
+  \]
+  where \(H(t)\) is a is a self-adjoint operator, called the Hamiltonian of the system.
+  </p>
+
+  <h3 id="measurement_postulate">Postulate 3</h3>
+  <p>
+  Measurement is an irreversible process during which information about the
+  measured system is obtained and is rendered sufficiently long-living and
+  stable, that is "objective".
+  </p>
+  <p>
+  <b>Postulate 3.</b> Measurements are described by a collection \(\{A_a\}\) of
+  measurement operators acting on the state space of the system being measured.
+  If the normalized state of the quantum system immediately before the
+  measurement is \(|\psi\rangle\) then the probability that result \(a\) occurs
+  is
+  \[
+  p(a)=\langle\psi|A^{\dagger}_a A_a |\psi\rangle\,.
+  \]
+  Given that outcome \(a\) occurred, the state of the quantum system after the measurement becomes
+  \[
+  |\psi'\rangle = \frac{A_a |\psi\rangle}{\sqrt{\langle\psi|A^{\dagger}_a A_a |\psi\rangle}}\,.
+  \]
+  The measurement operators satisfy the completeness equation
+  \[
+  \sum_a A^{\dagger}_a A_a = I\,.
+  \]
+  </p>
+  <p>
+  As a particular case, a <i>projective measurement</i> is described by an
+  observable, \(A\), a self-adjoint operator on the state space of the measured system. The
+  possible outcomes of the measurement are the eigenvalues \(a\) of the
+  observable. The measurement leaves the system in the corresponding eigenstate of \(A\).
+  </p>
+  <p>
+  A self-adjoint operator \(A\) can be expressed as
+  \[
+  A =\sum_a a P_a\,.
+  \]
+  Here \(a\) is an eigenvalue of \(A\), and \(P_a\) is the corresponding orthogonal projector onto the space of eigenvectors with eigenvalue \(a\).
+  Projectors satisfy
+  \[
+  \begin{aligned}
+  P_a P_b &= \delta_{a,b} P_a\,, \\
+  P^{\dagger}_a & = P_a\,.
+  \end{aligned}
+  \]
+  </p>
+  <p>
+  If the quantum state before to the measurement is \(|\psi\rangle\), then the outcome \(a\) is obtained
+  with probability
+  \[
+  p(a) = \langle\psi|P_a|\psi\rangle
+  \]
+  and the state of the quantum system after the measurement becomes
+  \[
+  |\psi'\rangle = \frac{P_a|\psi\rangle}{\Vert P_a|\psi\rangle\Vert}\,.
+  \]
+  </p>
+
+  <h3>Postulate 4</h3>
+  <p>
+  The state space of a composite physical system is the
+  tensor product of the state spaces of the component physical systems.  If the
+  Hilbert space of system \(A\) is \(\mathcal{H}_A\) and the Hilbert space of
+  system \(B\) is \(\mathcal{H}_B\), then the Hilbert space of the composite
+  systems \(AB\) is the tensor product \(\mathcal{H}_A \otimes \mathcal{H}_B\).
+  </p>
+
+</section>
+
+</div>
+
+</body>
+</html>

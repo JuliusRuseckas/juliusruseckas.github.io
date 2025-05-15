@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>Simple measuring process</title>
+</head>
+<body>
+
+<header>
+	<h1>Simple measuring process</h1>
+</header>
+
+<div class="flex-container">
+
+
+<section>
+  <p>
+  State vector of a quantum system after a measurement has been performed is
+  given by the <a href="quantum_postulates.html#measurement_postulate">measurement postulate</a>.
+  According to this postulate the measuring device is described classicaly,
+  thus the world is divided into quantum and classical parts. Let us
+  investigate a quantum system interacting with a measuring device in more
+  detail. The first steps in a measurement interaction occur at the level of
+  the microscopic components of the macroscopic device. We will describe the
+  microscopic component of the measuring device using quantum mechanics and the
+  rest of the device classically, thus shifting the quantum-classical divide.
+  </p>
+  <p>
+  The measurement is performed by coupling the quantum system with the
+  detector. Let us consider the interaction of the quantum system with
+  the microscopic part of the detector described by the Hamiltonian <a href="#1">[1]</a>
+  \[
+  H=\gamma p_q x\,,
+  \]
+  where \(x\) is the observable of the quantum system that is being measured,
+  \(p_q\) is the momenum of the detector conjugate to the coordinate
+  of the detector \(q\). A large parameter \(\gamma\) describes the strength
+  of the interaction. The interaction Hamiltonian results in a shift
+  of the detector's position \(q\). If the initial state of the detector
+  is such that \(q\) is well defined, we can obtain the value of \(x\)
+  by the final value of \(q\) after the interaction.
+  </p>
+  <p>
+  If the wave function of the quantum system before the measurement
+  is \(\psi(x)\), the detector is in the pure state \(\phi(q)\) then the
+  initial state of system and the detector is
+  \[
+  \Psi(x,q)=\psi(x)\phi(q)\,.
+  \]
+  Assuming that the duration of the interaction is \(\tau\), after the
+  interaction the state becomes
+  \[
+  \Psi'(x,q)=\exp\left(-\frac{\mathrm{i}}{\hbar}\gamma\tau p_{q}x\right)\Psi(x,q)=\psi(x)\phi(q-\gamma\tau x)\,.
+  \]
+  Applying the projective measurement of the postion \(q\) by the rest
+  of the detector with the result \(q'\) yields the post-measurement
+  wave fuction of the quantum system
+  \[
+  \psi(x;q')=\frac{1}{\sqrt{P(q')}}\psi(x)\phi(q'-\gamma\tau x)\,,
+  \]
+  where 
+  \[
+  P(q')=\int|\psi(x)|^2|\phi(q'-\gamma\tau x)|^2\,\mathrm{d}x
+  \]
+  is the probability to obtain the outcome \(q'\).
+  </p>
+  <p>
+  If the initial wave function of the detector \(\phi\) is narrowly centered
+  around \(q_0\), then the final wave function of the quantum system
+  becomes centered around
+  \[
+  x'=\frac{1}{\gamma\tau}(q'-q_0)
+  \]
+  and the probability to obtain the measured quantity \(x'\) becomes
+  \(P(x')=|\psi(x')|^2\). Thus after the shift of the quantum-classical
+  boundary the changes of the wave function of the quantum system are the same
+  as described by the measurement postulate. This result shows that the precise
+  placement of quantum-classical divide is not important.
+  </p>
+  <p>
+  For example, let us take the wave function of the detector as
+  \[
+  \phi(q)=\frac{1}{\sqrt{\epsilon}}f\left(\frac{1}{\epsilon}(q-q_0)\right)\,,
+  \]
+  where \(\epsilon\) is a small quantity describing the width of the
+  detector's wave function and the function $f$ satisfies the condition
+  \[
+  \int|f(u)|^2\,\mathrm{d}u=1\,.
+  \]
+  In this situation the probability for outcome \(q'\) can be approximated
+  as 
+  \[
+  P(q')\approx\frac{1}{\gamma\tau}|\psi(x')|^2
+  \]
+  and the probability to obtain the measured quantity \(x'\) is \(P(x')=\gamma\tau P(q')=|\psi(x')|^2\).
+  The wave function of the quantum system after the measurement becomes
+  \[
+  \psi(x;x')=\frac{\psi(x)}{|\psi(x')|}\sqrt{\frac{\gamma\tau}{\epsilon}}f\left(\frac{\gamma\tau}{\epsilon}(x'-x)\right)\,.
+  \]
+  This is a function with a sharp peak around \(x=x'\). The finite width
+  \(\epsilon\) of the detector's quantum state \(\phi\) results in an
+  measurement error 
+  \[
+  \Delta x=\frac{\epsilon}{\gamma\tau}\,.
+  \]
+  </p>
+  <hr style="width: 50%;">
+  <p>
+  <span id="1">[1]</span> J.&nbsp;von&nbsp;Neumann, <i>Mathematical Foundations of Quantum Mechanics:
+  New Edition</i>, Translated by R.&nbsp;T.&nbsp;Beyer, Edited by N.&nbsp;A.&nbsp;Wheeler
+  (Princeton Univ. Press, 2018), ISBN 9780691178578, page 287.
+  </p>
+
+</section>
+
+</div>
+
+</body>
+</html>

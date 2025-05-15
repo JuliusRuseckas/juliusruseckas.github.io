@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>Measurement of position and momentum at the same time</title>
+</head>
+<body>
+
+<header>
+	<h1>Measurement of position and momentum at the same time</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+  <p>
+  Usually Heisenberg uncertainty principle is formulated in terms of statistics of measurement results when
+  the measurements are independent and performed on identically prepared quantum systems. For position and momentum measurement
+  the Heisenberg uncertainty principle leads to the inequality
+  \[
+  \Delta x\Delta p\geq\frac{\hbar}{2}\,,
+  \]
+  where \(\Delta x\) and \(\Delta p\) are standard deviations of the measured values. Here we will consider a measurement process where
+  we try to measure the position and momentum of a single quantum system at the same time. To estimate the measurement errors we will describe
+  the measurement similarly as in <a href="simple_measurement.html">a simple von Neumann measurement</a>.
+  </p>
+  <p>
+  Let us consider the interaction of the quantum system with the microscopic
+  part of the detector described by the Hamiltonian
+  \[
+  H=\gamma_1 p_1 x+\gamma_2 p_2 p\,,
+  \]
+  where \(x\) and \(p\) are the position and momentum of the quantum system,
+  \(p_i\) are the detector momenta conjugate to the detector coordinates
+  \(q_i\). Large parameters \(\gamma_1\) and \(\gamma_2\) describe
+  the strength of the interaction. Before the measurement the detector
+  is in a separable pure state with the wave function \(\phi_1(q_1)\phi_2(q_2)\)
+  that has well defined coordinates \(q_i\). If the wave function of
+  the quantum system before the measurement is \(\psi(x)\) then the initial
+  state of system and the detector is
+  \[
+  \Psi(x, q_1, q_2)=\psi(x)\phi_1(q_1)\phi_2(q_2)\,.
+  \]
+  Assuming that the duration of the interaction is \(\tau\), after the
+  interaction the state becomes
+  \[
+  \Psi'(x, q_1, q_2)=\exp\left(-\frac{\mathrm{i}}{\hbar}\gamma_1\tau p_1 x-\frac{\mathrm{i}}{\hbar}\gamma_2\tau p_2 p\right)
+  \psi(x)\phi_1(q_1)\phi_2(q_2)\,.
+  \]
+  According to Baker-Campbell-Hausdorff (BCH) formula, when the commutator
+  \([A,B]\) commutes with \(A\) and \(B\), we have the equality
+  \[
+  \mathrm{e}^{A+B}=\mathrm{e}^{A}\mathrm{e}^{B}\mathrm{e}^{-\frac{1}{2}[A,B]}\,.
+  \]
+  Taking int account the commutator \([x,p]=\mathrm{i}\hbar\) from BCH formula
+  we obtain
+  \[
+  \Psi'(x, q_1, q_2)=\exp\left(-\frac{\mathrm{i}}{\hbar}\gamma_1\tau p_1 x\right)
+  \exp\left(-\frac{\mathrm{i}}{\hbar}\gamma_2\tau p_2 p\right)
+  \exp\left(\frac{i}{2\hbar}\gamma_1\gamma_2\tau^2 p_1 p_2 \right)\psi(x)\phi_1(q_1)\phi_2(q_2)\,.
+  \]
+  Introducing the wave function of the detector
+  \[
+  \Phi(q_1, q_2; \xi)=\exp\left(\frac{2i}{\hbar^2}\xi p_1 p_2 \right)\phi_1(q_1)\phi_2(q_2)
+  \]
+  we can write
+  \[
+  \Psi'(x, q_1, q_2)=\exp\left(-\frac{\mathrm{i}}{\hbar}\gamma_1\tau p_1 x\right)
+  \exp\left(-\frac{\mathrm{i}}{\hbar}\gamma_2\tau p_2 p\right)\psi(x)\Phi(q_1, q_2; \xi)\,.
+  \]
+  Here
+  \[
+  \xi=\frac{\hbar}{4}\gamma_1\gamma_2\tau^2\,.
+  \]
+  Going into momentum representation for the measured quantum system
+  \[
+  \tilde{\psi}(p)=\frac{1}{\sqrt{2\pi\hbar}}\int\mathrm{e}^{-\frac{\mathrm{i}}{\hbar}px}\psi(x)\,\mathrm{d}x
+  \]
+  we get the state of the quantum system and the detector after the
+  interaction
+  \[
+  \Psi'(x, q_1, q_2)=\frac{1}{\sqrt{2\pi\hbar}}\int\mathrm{e}^{\frac{i}{\hbar}px}\tilde{\psi}(p)
+  \Phi(q_1 - \gamma_1\tau x,q_2 - \gamma_2\tau p; \xi)\,\mathrm{d}p\,.
+  \]
+  </p>
+  <p>
+  Applying the projective measurement of the detector postions \(q_1\) and \(q_2\)
+  by the rest of the detector with the results \(q_1^{\prime}\) and \(q_2^{\prime}\) yields the post-measurement
+  wave fuction of the quantum system
+  \[
+  \psi(x; q_1^{\prime},q_2^{\prime})=\frac{1}{\sqrt{P(q_1^{\prime}, q_2^{\prime})}}
+  \Psi'(x, q_1^{\prime}, q_2^{\prime})\,,
+  \]
+  where
+  \[
+  P(q_1^{\prime}, q_2^{\prime})=\int|\Psi'(x, q_1^{\prime},q_2^{\prime})|^2\,\mathrm{d}x
+  \]
+  is the probability to obtain outcomes \(q_1^{\prime}\) and \(q_2^{\prime}\).
+  If the initial wave functions of the detector \(\phi_i\) are narrowly
+  centered around \(q_{i,0}\), then the measurement results are
+  \begin{align*}
+  x' & =\frac{1}{\gamma_1\tau}(q_1^{\prime} - q_{1,0})\,,\\
+  p' & =\frac{1}{\gamma_2\tau}(q_2^{\prime} - q_{2,0})\,.
+  \end{align*}
+  The probability distribution of measurement results is
+  \(P(x',p')=\gamma_1\gamma_2\tau^2 P(q_1^{\prime}, q_2^{\prime})\).
+  </p>
+  <p>
+  Let us calculate the function \(\Phi\) for a particular case, Gaussian
+  initial wave functions of the detector
+  \[
+  \phi_i(q_i)=\frac{1}{(2\pi)^{\frac{1}{4}}\sqrt{\epsilon_i}}
+  \exp\left(-\frac{1}{4\epsilon_i^2}(q_i - q_{i,0})^2\right)\,.
+  \]
+  The momentum representation of these wave functions is
+  \[
+  \tilde{\phi}_i(p_i)=\left(\frac{2}{\pi}\right)^{\frac{1}{4}}\sqrt{\frac{\epsilon_i}{\hbar}}
+  \exp\left(-\frac{\epsilon_i^2}{\hbar^2}p_i^2 - \frac{\mathrm{i}}{\hbar}p_i q_{i,0}\right)\,.
+  \]
+  Using the momentum representation of the detector wave functions \(\phi_i\),
+  the function \(\Phi\) can be expressed as
+  \[
+  \Phi(q_1, q_2; \xi)=\frac{1}{2\pi\hbar}\int\mathrm{d}p_1\int\mathrm{d}p_2\,\mathrm{e}^{\frac{\mathrm{i}}{\hbar}p_1 q_1
+  +\frac{\mathrm{i}}{\hbar}p_2 q_2 +\frac{2\mathrm{i}}{\hbar^2}\xi p_1 p_2}\tilde{\phi}_1(p_1)\tilde{\phi}_2(p_2)\,.
+  \]
+  We obtain
+  \[
+  \Phi(q_1, q_2; \xi)=\frac{1}{\sqrt{2\pi\epsilon_1^{\prime}\epsilon_2^{\prime}}}
+  \exp\left(-\frac{(q_1 - q_{1,0})^2}{4\epsilon_1^{\prime 2}}-\frac{(q_2 - q_{2,0})^2}{4\epsilon_2^{\prime 2}}
+  -\mathrm{i}\xi\frac{(q_1 - q_{1,0})(q_2 - q_{2,0})}{2\epsilon_1\epsilon_2\epsilon_1^{\prime}\epsilon_2^{\prime}}\right)\,,
+  \]
+  where
+  \[
+  \epsilon_i^{\prime}=\epsilon_i \sqrt{1+\frac{\xi^2}{\epsilon_1^2\epsilon_2^2}}\,.
+  \]
+  If we perform only the position measurement or only the momentum measurement,
+  the measurement errors <a href="simple_measurement.html">would be</a>
+  \[
+  \Delta x_0=\frac{\epsilon_1}{\gamma_1\tau}\,,\qquad\Delta p_0=\frac{\epsilon_2}{\gamma_2\tau}\,.
+  \]
+  From the expression for the function \(\Phi\) we see that trying to
+  measure both position and momentum simultaneously the measurement
+  errors are
+  \[
+  \Delta x=\frac{\epsilon_1^{\prime}}{\gamma_1\tau}\,,\qquad\Delta p=\frac{\epsilon_2^{\prime}}{\gamma_2\tau}\,.
+  \]
+  The product of measurement errors is
+  \[
+  \Delta x\Delta p=\Delta x_0\Delta p_0\left(1+\left(\frac{\hbar}{4}\frac{1}{\Delta x_0\Delta p_0}\right)^2\right)\,.
+  \]
+  The minimum of \(\Delta x\Delta p\) is at
+  \[
+  \Delta x_0\Delta p_0=\frac{\hbar}{4}
+  \]
+  and takes the value
+  \[
+  \Delta x\Delta p=\frac{\hbar}{2}\,.
+  \]
+  Thus for all parameters
+  \[
+  \Delta x\Delta p\geq\frac{\hbar}{2}\,.
+  \]
+  That is, the product of measurement errors is has a lower limit.
+  </p>
+  <h3>General proof</h3>
+  <p>
+  We have the commutator
+  \[
+  \left[q_1,\exp\left(\frac{2\mathrm{i}}{\hbar^2}\xi p_1 p_2\right)\right]
+  =\mathrm{i}\hbar\frac{\partial}{\partial p_1}\exp\left(\frac{2\mathrm{i}}{\hbar^2}\xi p_1 p_2\right)=
+  -\frac{2}{\hbar}\xi p_2\exp\left(\frac{2\mathrm{i}}{\hbar^2}\xi p_1 p_2\right)\,.
+  \]
+  Using this expression we obtain
+  \[
+  \langle\Phi|q_1|\Phi\rangle=\langle\phi_1|q_1|\phi_1\rangle-\frac{2}{\hbar}\xi\langle\phi_2|p_2|\phi_2\rangle
+  \]
+  and
+  \[
+  \langle\Phi|q_1^2|\Phi\rangle=\langle\phi_1|q_1^2|\phi_1\rangle
+  -\frac{4}{\hbar}\xi\langle\phi_1|q_1|\phi_1\rangle\langle\phi_2|p_2|\phi_2\rangle
+  +\frac{4}{\hbar^2}\xi^2\langle\phi_2|p_2^2|\phi_2\rangle\,.
+  \]
+  The dispersion of \(q_1\) is
+  \[
+  \Delta q_1^2=\langle\Phi|q_1^2|\Phi\rangle-\langle\Phi|q_1|\Phi\rangle^2=\delta q_1^2+\frac{4}{\hbar^2}\xi^2\delta p_2^2\,,
+  \]
+  where \(\delta a_i^2=\langle\phi_i|a_i^2|\phi_i\rangle-\langle\phi_i|a_i|\phi_i\rangle^2\)
+  is the initial dispersion of observable \(a_i\). Multiplying the
+  dispersions we get
+  \[
+  \Delta q_1^2\Delta q_2^2=\delta q_1^2\delta q_2^2+\frac{4}{\hbar^2}\xi^2\delta q_1^2\delta p_1^2
+  +\frac{4}{\hbar^2}\xi^2\delta q_2^2\delta p_2^2+\frac{16}{\hbar^4}\xi^4\delta p_1^2\delta p_2^2\,.
+  \]
+  From the uncertainty principle it follows that
+  \[
+  \delta q_1^2\delta p_1^2\geq\frac{\hbar^2}{4}\,.
+  \]
+  Applying this inequality we obtain
+  \[
+  \Delta q_1^2\Delta q_2^2\geq2\xi^2+\delta q_1^2\delta q_2^2+\frac{\xi^4}{\delta q_1^2\delta q_2^2}\,.
+  \]
+  The last two terms have a minimum when \(\delta q_1^2\delta q_2^2=\xi^2\),
+  threfore
+  \[
+  \Delta q_1^2\Delta q_2^2\geq 4\xi^2\,.
+  \]
+  </p>
+</section>
+
+</div>
+
+</body>
+</html>

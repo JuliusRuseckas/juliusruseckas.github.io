@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>Weak measurements</title>
+</head>
+<body>
+
+<header>
+	<h1>Weak measurements</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+
+  <p>
+  In an usual quantum measurement the measuring device interacts strongly
+  with a single quantum system. The state of the measured system is
+  significantly altered, according to the
+  <a href="quantum_postulates.html#measurement_postulate">measurement postulate</a>.
+  However, having a large ensemble of identically prepared quantum systems it
+  is possible to extract information about the quantum state with arbitrarily
+  small disturbance of the quantum state. This process is called &ldquo;weak
+  measurements&rdquo; <a href="#ref1">[1&ndash;10]</a>.
+  </p>
+  <p>
+  In an usual quantum measurement in order to extract information from
+  a single system the interaction strengt of the quantum system with
+  the detector should be large. If the interaction strenght is small,
+  to obtain meaningful information about the quantum system the process
+  of interaction has to be performed on an ensemble of identical quantum
+  systems. Each system with its own detector is prepared in the same
+  initial state. After time \(\tau\) the readings of the detectors are
+  collected and averaged.
+  </p>
+  <p>
+  We will describe the microscopic component of the measuring device
+  using quantum mechanics and the rest of the device classically. Let
+  us consider the interaction of the quantum system with the microscopic
+  part of the detector described by similar Hamiltonian as in a
+  <a href="simple_measurement.html">simple von Neumann measurement</a>,
+  \[
+  H=\gamma p_q A\,,
+  \]
+  where \(A\) is the observable of the quantum system, \(p_q\) is the
+  momentum of the detector conjugate to the coordinate of the detector
+  \(q\); the parameter \(\gamma\) describes the strength of the interaction.
+  In contrast to a usual quantum measurement, the parameter \(\gamma\)
+  is small. The interaction Hamiltonian results in a small shift of
+  the detector's position \(q\). If the initial state of the detector
+  has a width much larger than this shift, the state of the quantum
+  system is only slightly changed.
+  </p>
+  <p>
+  The operator \(A\) has the eigenstates \(|a\rangle\) with eigenvalues
+  \(a\). If the state of the quantum system before the measurement has
+  coefficients \(\psi_a=\langle a|\psi\rangle\) in the basis of eigenstates
+  of operator \(A\), the detector is in the pure state \(\phi(q)\), then
+  the initial state of system and the detector is
+  \[
+  \Psi_a (q)=\psi_a \phi(q)\,.
+  \]
+  Assuming that the duration of the interaction is \(\tau\), after the
+  interaction the state becomes
+  \[
+  \Psi_a^{\prime}(q)=\exp\left(-\frac{\mathrm{i}}{\hbar}\gamma\tau p_q a\right)\Psi_a (q)
+  =\psi_a \phi(q-\gamma\tau a)\approx\psi_a \phi(q)-\gamma\tau a\psi_a \frac{\mathrm{d}\phi(q)}{\mathrm{d}q}\,.
+  \]
+  Applying the projective measurement of the postion \(q\) by the rest
+  of the detector with the result \(q'\) yields the post-measurement
+  state of the quantum system 
+  \[
+  \psi_a (q')=\frac{1}{\sqrt{P(q')}}\psi_a \phi(q'-\gamma\tau a)\,,
+  \]
+  where
+  \[
+  P(q')=\sum_a |\psi_a|^2|\phi(q'-\gamma\tau a)|^2
+  \]
+  is the probability to obtain the outcome \(q'\). We see that the post-measurement
+  state differes little from the pre-measurement state if for all values
+  \(a\) for which \(\psi_a\neq 0\) we have \(\gamma\tau a\ll\epsilon\),
+  where \(\epsilon\) is the width of function \(\phi\). Since the width
+  \(\epsilon\) of the detector's wave function \(\phi(q)\) is large, \(\epsilon\gg\gamma\tau a\),
+  interaction of one quantum system with the measuring device will give
+  almost no information about \(A\). However, the same measurement process
+  can be performed on each member of an ensemble of \(N\) systems prepared
+  in the same state.
+  </p>
+  <p>
+  Expanding the probability \(P(q')\) into the power series in the powers
+  of the interaction strength \(\gamma\) and keeping only the first-order
+  terms we get 
+  \[
+  P(q')\approx|\phi(q')|^2 - \gamma\tau\langle A\rangle\frac{\mathrm{d}|\phi(q')|^2}{\mathrm{d}q'}\,,
+  \]
+  where \(\langle A\rangle=\sum_a a|\psi_a|^2\) is the average of
+  the observable \(A\). The average of the post-measurement detector's
+  coordinate \(q'\) is
+  \[
+  \langle q'\rangle=\int q' P(q')\,\mathrm{d}q'\approx\int q'|\phi(q')|^2\,\mathrm{d}q'
+  - \gamma\tau\langle A\rangle\int q'\frac{\mathrm{d}|\phi(q')|^2}{\mathrm{d}q'}\,\mathrm{d}q'
+  =\langle q\rangle + \gamma\tau\langle A\rangle\,.
+  \]
+  Here \(\langle q\rangle\) is the average pre-measurement coordinate
+  of the detector. If the size of the ensemble of identically prepared
+  systems is \(N\), the error in determining the average coordinate of
+  the detector is of the order of \(\frac{\epsilon}{\sqrt{N}}\). The
+  weak measurement allows the determination of the average
+  \[
+  \langle A\rangle=\frac{1}{\gamma\tau}(\langle q'\rangle-\langle q\rangle)
+  \]
+  with the error in the average \(\langle A\rangle\) of the order of
+  \(\frac{\epsilon}{\gamma\tau\sqrt{N}}\). The error can be made arbitrarily
+  small by taking a large enough size of ensemble \(N\).
+  </p>
+  <p>
+  Note, that since the interaction Hamiltonian commutes with the detector's
+  momentum \(p_q\), the average detector's momentum does not change
+  and is the same before and after the interaction; \(\langle p_q^{\prime}\rangle=\langle p_q\rangle\).
+  </p>
+
+  <h3>Weak measurement with post-selection</h3>
+
+  <p>
+  Since the state of the quantum system does not significantly change
+  during the interaction with the detector in the weak measurement process,
+  after the interaction we can perform the usual projective measurement
+  of another observable \(B\). From the ensemble of systems we can select
+  a subensemble where the measurement of \(B\) yields a value \(b\). Averaging
+  readings of the detectors in this subensemble we can obtain a quantity
+  called &ldquo;weak value&rdquo; \(\langle A\rangle_b\) of the observable \(A\).
+  This value can be interpreted as the average of \(A\) given the condition
+  that the final state of quantum system is \(|b\rangle\).
+  </p>
+  <p>
+  After the measuring interaction is over, there is no further interaction
+  between the systems of the ensemble and the corresponding measuring
+  devices. Consequently, measurement of observable \(B\) will not affect
+  the results of measurement of \(q\). Thus, changing the time ordering
+  between the measurements of the detector's positon \(q\) and the postselection
+  measurements of \(B\) will not affect the outcomes.
+  </p>
+  <p>
+  Applying the projective measurement of the postion \(q\) by the rest
+  of the detector with the result \(q'\) and the projective measurement
+  of the observable \(B\) with the result \(b\) yields the post-measurement
+  coefficients in the basis of eigenstates \(|b\rangle\) of operator
+  \(B\)
+  \[
+  \psi_b (q')=\frac{1}{\sqrt{P(q',b)}}\sum_a \langle b|a\rangle\psi_a \phi(q'-\gamma\tau a)\,,
+  \]
+  where
+  \[
+  P(q',b)=\left|\sum_a \langle b|a\rangle\psi_a \phi(q'-\gamma\tau a)\right|^2
+  \]
+  is the probability to obtain outcomes \(q'\) and \(b\). The average
+  coordinate of the detector in the post-selected subensemble is
+  \[
+  \langle q'\rangle_b =\int q'P(q'|b)\,\mathrm{d}q'\,,
+  \]
+  where 
+  \[
+  P(q'|b)=\frac{P(q',b)}{P(b)}
+  \]
+  is the coditional probability to obtain \(q'\) given that \(B\) has
+  the value \(b\) and
+  \[
+  P(b)=\int P(q',b)\,\mathrm{d}q'
+  \]
+  is the probability to obtain the measurement outcome \(b\). Expanding
+  the probability \(P(q',b)\) into the power series in the powers of
+  the interaction strength \(\gamma\) and keeping only the first-order
+  terms we get
+  \[
+  P(q',b)\approx|\phi(q')|^2|\langle b|\psi\rangle|^2
+  - 2\gamma\tau\mathrm{Re}\left\{\langle\psi|b\rangle\langle b|A|\psi\rangle\phi^{*}(q')\frac{\mathrm{d}\phi(q')}{\mathrm{d}q'}\right\} 
+  \]
+  and
+  \[
+  P(b)\approx|\langle b|\psi\rangle|^2
+  - \frac{\mathrm{i}}{\hbar}\gamma\tau\langle\psi|[|b\rangle\langle b|,A]|\psi\rangle\langle p_q\rangle\,.
+  \]
+  Here \(\langle p_q\rangle\) is the average pre-measurement momentum
+  of the detector. Thus, the average coordinate of the detector in the
+  subensemble can be approximated as
+  \[
+  \langle q'\rangle_b\approx\langle q\rangle
+  + \frac{1}{2}\gamma\tau\frac{\langle\psi|\{|b\rangle\langle b|,A\}|\psi\rangle}{|\langle b|\psi\rangle|^2}
+  + \frac{\mathrm{i}}{\hbar}\gamma\tau\frac{\langle\psi|[|b\rangle\langle b|,A]|\psi\rangle}{|\langle b|\psi\rangle|^2}
+  \left(\langle q\rangle\langle p_{q}\rangle-\mathrm{Re}\langle qp_{q}\rangle\right)\,.
+  \]
+  Introducing a complex-valued number, a &ldquo;weak value&rdquo; of the observable
+  \(A\)
+  \[
+  \langle A\rangle_b = \frac{\langle b|A|\psi\rangle}{\langle b|\psi\rangle}
+  \]
+  we can write the change of detector's coordinate as
+  \[
+  \frac{1}{\gamma\tau}(\langle q'\rangle_{b}-\langle q\rangle)
+  = \mathrm{Re}\langle A\rangle_{b}
+  +\frac{2}{\hbar}\left(\mathrm{Re}\langle qp_{q}\rangle
+  -\langle q\rangle\langle p_q\rangle\right)\mathrm{Im}\langle A\rangle_b\,.
+  \]
+  This expression is the same as the equation relating the change of
+  the average coordinate to the average of the observable \(A\) in a
+  weak measurement without post-selection. However, now the change of
+  detector's coordinate consists of two parts: the first detector-independent
+  part and the second part that depends on the detector's initial state
+  \(\phi(q)\). The latter part is nonzero only when the operators \(A\)
+  and \(B\) do not commute. Thus, in contrast to the average \(\langle A\rangle\)
+  of the observable \(A\) which does not depend on the details of the
+  interaction with the measuring device, for post-selected ensemble
+  even in the limit of the vanishingly small interaction strength \(\gamma\)
+  the change of detector's coordinate depends the measurement details.
+  By changing the detector's initial state the detector-independent
+  and detector-dependent terms can be separated and combined into one
+  complex-valued number \(\langle A\rangle_b\).
+  </p>
+  <p>
+  Note, that in contrast to the weak measurement without post-selection,
+  the average momentum of the detector in the post-selected ensemble
+  is different from the initial momentum when the operators \(A\) and
+  \(B\) do not commute. The change in the detector's average momentum
+  can be estimated as follows: In momentum representation the state
+  of the quantum system and the detector after the interaction is
+  \[
+  \tilde{\Psi}_a^{\prime}(p_q )=\psi_a \mathrm{e}^{-\frac{\mathrm{i}}{\hbar}\gamma\tau p_q a}\tilde{\phi}(p_q )\,,
+  \]
+  where
+  \[
+  \tilde{\phi}(p_q )=\frac{1}{\sqrt{2\pi\hbar}}\int\mathrm{e}^{-\frac{\mathrm{i}}{\hbar}p_q q}\phi(q)\,\mathrm{d}q
+  \]
+  is the initial wave function of the detector in momentum representation.
+  Applying the projective measurement of the observable \(B\) with the
+  result \(b\) yields the post-measurement wave function in the momentum
+  representation
+  \[
+  \tilde{\Psi}_b^{\prime}(p_q ) = \frac{1}{\sqrt{P(b)}}\sum_a \langle b|a\rangle\psi_a
+  \mathrm{e}^{-\frac{\mathrm{i}}{\hbar}\gamma\tau p_q a}\tilde{\phi}(p_q )\,.
+  \]
+  The average momentum of the detector in the subensemble is given by
+  the equation
+  \[
+  \langle p_q^{\prime}\rangle_b = \int p_q \frac{P(p_q, b)}{P(b)}\,\mathrm{d}p_q\,,
+  \]
+  where
+  \[
+  P(p_q, b)=|\tilde{\phi}(p_q)|^2\left|\sum_a \langle b|a\rangle\mathrm{e}^{-\frac{\mathrm{i}}{\hbar}\gamma\tau p_q a}\psi_a \right|^2
+  \]
+  is the probability to obtain \(p_q\) given that \(B\) has the value
+  \(b\). Keeping only terms up to first-order in interaction strengt
+  \(\gamma\) we get
+  \[
+  P(p_q, b)\approx|\tilde{\phi}(p_q)|^2\left(|\langle b|\psi\rangle|^2
+  -\frac{\mathrm{i}}{\hbar}\gamma\tau p_q \langle\psi|[|b\rangle,\langle b|A]|\psi\rangle\right)
+  \]
+  and
+  \[
+  \langle p_q^{\prime}\rangle_b
+  \approx \langle p_q\rangle
+  +\frac{2}{\hbar}\gamma\tau\mathrm{Im}\langle A\rangle_b
+  \left(\langle p_q^2\rangle-\langle p_q\rangle^2\right)\,.
+  \]
+  Thus for non-commuting operators \(A\) and \(B\) the average momentum
+  of the detector in the subensemble is different from the initial average
+  momentum.
+  </p>
+  <hr style="width: 50%;">
+  <ol>
+    <li id="ref1">
+      Y.&nbsp;Aharonov, D.&nbsp;Albert, A.&nbsp;Casher, L.&nbsp;Vaidman,
+      <i>Surprising quantum effects</i>,
+      Phys.&nbsp;Lett.&nbsp;A <b>124</b>, 199 (1987).
+    </li>
+    <li>
+      Y.&nbsp;Aharonov, D.&nbsp;Z.&nbsp;Albert, L.&nbsp;Vaidman,
+      <i>How the result of a measurement of a component of the spin of a spin-1/2 particle can turn out to be 100</i>,
+      Phys.&nbsp;Rev.&nbsp;Lett. <b>60</b>, 1351 (1988).</li>
+    <li>
+      A.&nbsp;Leggett,
+      <i>Comment on &ldquo;How the Result of a Measurement of a Component of the Spin of a Spin-1/2 Particle Can Turn Out to be 100&rdquo;</i>,
+      Phys.&nbsp;Rev.&nbsp;Lett. <b>62</b>, 2325 (1989).
+    </li>
+    <li>
+      A.&nbsp;Peres,
+      <i>Quantum Measurements with Postselection</i>,
+      Phys.&nbsp;Rev.&nbsp;Lett. <b>62</b>, 2326 (1989).
+    </li>
+    <li>
+      I.&nbsp;M.&nbsp;Duck, P.&nbsp;M.&nbsp;Stevenson, E.&nbsp;C.&nbsp;G.&nbsp;Sudarshan,
+      <i>The sense in which a &ldquo;weak measurement&rdquo; of a spin-1/2 particle's spin component yields a value 100</i>,
+      Phys.&nbsp;Rev.&nbsp;D <b>40</b>, 2112 (1989).
+    </li>
+    <li>
+      Y.&nbsp;Aharonov, L.&nbsp;Vaidman,
+      <i>Properties of a quantum system during the time interval between two measurements</i>,
+      Phys.&nbsp;Rev.&nbsp;A <b>41</b>, 11 (1990).
+    </li>
+    <li>
+      Y.&nbsp;Aharonov, L.&nbsp;Vaidman,
+      <i>Complete description of a quantum system at a given time</i>,
+      J.&nbsp;Phys.&nbsp;A:&nbsp;Math.&nbsp;Gen. <b>24</b>, 2315 (1991).
+    </li>
+    <li>
+      N.&nbsp;W.&nbsp;M.&nbsp;Ritchie, J.&nbsp;G.&nbsp;Story, and R.&nbsp;G.&nbsp;Hulet,
+      <i>Realization of a measurement of a &ldquo;weak value&rdquo;</i>,
+      Phys.&nbsp;Rev.&nbsp;Lett. <b>66</b>, 1107 (1991).
+    </li>
+    <li>
+      J.&nbsp;G.&nbsp;Story, N.&nbsp;W.&nbsp;M.&nbsp;Ritchie, and R.&nbsp;G.&nbsp;Hulet,
+      <i>Weak measurements</i>,
+      Mod.&nbsp;Phys.&nbsp;Lett.&nbsp;B <b>5</b>, 1713 (1991).
+    </li>
+    <li>
+      Y.&nbsp;Aharonov, L.&nbsp;Vaidman,
+      <i>On the two-state vector reformulation of quantum mechanics</i>,
+      Phys.&nbsp;Scr. <b>1998</b> (T76), 85 (1998).
+    </li>
+  </ol>
+</section>
+
+</div>
+
+</body>
+</html>
