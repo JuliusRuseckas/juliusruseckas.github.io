@@ -147,18 +147,13 @@
   <p>
   Applying the projective measurement of the postion \(q\) by the rest
   of the detector with the result \(q'\) and the projective measurement
-  of the observable \(B\) with the result \(b\) yields the post-measurement
-  coefficients in the basis of eigenstates \(|b\rangle\) of operator
-  \(B\)
+  of the observable \(B\) with the result \(b\) yields
+  the post-measurement probability to obtain outcomes \(q'\) and \(b\)
   \[
-  \psi_b (q')=\frac{1}{\sqrt{P(q',b)}}\sum_a \langle b|a\rangle\psi_a \phi(q'-\gamma\tau a)\,,
+  P(q',b)=\left|\sum_a \langle b|a\rangle\psi_a \phi(q'-\gamma\tau a)\right|^2\,,
   \]
-  where
-  \[
-  P(q',b)=\left|\sum_a \langle b|a\rangle\psi_a \phi(q'-\gamma\tau a)\right|^2
-  \]
-  is the probability to obtain outcomes \(q'\) and \(b\). The average
-  coordinate of the detector in the post-selected subensemble is
+  where \(|b\rangle\) are the eigenstates of operator \(B\).
+  The average coordinate of the detector in the post-selected subensemble is
   \[
   \langle q'\rangle_b =\int q'P(q'|b)\,\mathrm{d}q'\,,
   \]
@@ -236,23 +231,17 @@
   \]
   is the initial wave function of the detector in momentum representation.
   Applying the projective measurement of the observable \(B\) with the
-  result \(b\) yields the post-measurement wave function in the momentum
-  representation
+  result \(b\) yields the post-measurement probability to obtain the momentum \(p_q\) and the value \(b\)
   \[
-  \tilde{\Psi}_b^{\prime}(p_q ) = \frac{1}{\sqrt{P(b)}}\sum_a \langle b|a\rangle\psi_a
-  \mathrm{e}^{-\frac{\mathrm{i}}{\hbar}\gamma\tau p_q a}\tilde{\phi}(p_q )\,.
+  P(p_q, b)=|\tilde{\phi}(p_q)|^2\left|
+  \sum_a \langle b|a\rangle\mathrm{e}^{-\frac{\mathrm{i}}{\hbar}\gamma\tau p_q a}\psi_a \right|^2\,.
   \]
   The average momentum of the detector in the subensemble is given by
   the equation
   \[
-  \langle p_q^{\prime}\rangle_b = \int p_q \frac{P(p_q, b)}{P(b)}\,\mathrm{d}p_q\,,
+  \langle p_q^{\prime}\rangle_b = \int p_q \frac{P(p_q, b)}{P(b)}\,\mathrm{d}p_q\,.
   \]
-  where
-  \[
-  P(p_q, b)=|\tilde{\phi}(p_q)|^2\left|\sum_a \langle b|a\rangle\mathrm{e}^{-\frac{\mathrm{i}}{\hbar}\gamma\tau p_q a}\psi_a \right|^2
-  \]
-  is the probability to obtain \(p_q\) given that \(B\) has the value
-  \(b\). Keeping only terms up to first-order in interaction strengt
+  Keeping only terms up to first-order in interaction strength
   \(\gamma\) we get
   \[
   P(p_q, b)\approx|\tilde{\phi}(p_q)|^2\left(|\langle b|\psi\rangle|^2
