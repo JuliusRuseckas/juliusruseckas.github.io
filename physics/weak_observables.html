@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>Some quantities measurable with weak measurements</title>
+</head>
+<body>
+
+<header>
+	<h1>Some quantities measurable with weak measurements</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+  <h3>Probability density</h3>
+  <p>
+  Taking the operator \(A\) in the
+  <a href="weak_measurements.html">weak measurements</a>
+  as a projection operator \(\hat{P}_a=|a\rangle\langle a|\) we can determine
+  the probability of finding the quantum system in the state \(|a\rangle\):
+  \[
+  P_a=|\langle a|\psi\rangle|^2
+  =\langle\hat{P}_a\rangle=\frac{1}{\gamma\tau}(\langle q'\rangle-\langle q\rangle)\,.
+  \]
+  In particular, for \(\hat{P}_x=|x\rangle\langle x|\) weak measurements
+  can determine the probability density \(\rho(x)=|\psi(x)|^{2}\).
+  </p>
+
+  <h3>Probability current</h3>
+  <p>
+  The Schrödinger equation for the wave function leads to the equation
+  of continuity 
+  \[
+  \frac{\partial}{\partial t}\rho(x,t)+\frac{\partial}{\partial x}j(x,t)=0\,,
+  \]
+  where \(\rho(x,t)=|\psi(x,t)|^2\) is the probability density and
+  \(j(x,t)\) is the probability current. From the continuity equation
+  it follows
+  \[
+  j(X,t)=\frac{\partial}{\partial t}\int_{X}^{\infty}\rho(x,t)\,\mathrm{d}x\,.
+  \]
+  The quantity
+  \[
+  \int_X^{\infty}\rho(x,t)\,\mathrm{d}x=\langle\psi(t)|\hat{P}_X|\psi(t)\rangle
+  \]
+  is the probability to find a quantum system in the spatial region
+  \(x>X\). Here
+  \[
+  \hat{P}_X = \Theta(\hat{x}-X)
+  \]
+  is the projection operator on the subspace \(x>X\) and \(\Theta\) is
+  the Heaviside unit-step function. Approximating the time derivative
+  by a finite difference we get
+  \[
+  j(X,t)=\lim_{\Delta t\rightarrow 0}\left(\langle\hat{P}_X(t+\Delta t)\rangle-\langle\hat{P}_X(t)\rangle\right)
+  \approx\frac{1}{\Delta t}\left(\langle\hat{P}_X(t+\Delta t)\rangle-\langle\hat{P}_X(t)\rangle\right)\,.
+  \]
+  Since the weak measurements do not disturb the time evolution of the
+  quantum system, we can measure both averages \(\langle\hat{P}_X (t)\rangle\)
+  and \(\langle\hat{P}_X (t+\Delta t)\rangle\) using weak measurements
+  where the quantum system interacts with two detectors at times \(t\)
+  and \(t+\Delta t\). Alternatively, one can use a single detector with
+  time dependent interaction strength \(\gamma\): the interaction is
+  briefly switched on at times \(t\) and \(t+\Delta t\) with the change
+  of the sign of interaction strength, \(\gamma(t+\Delta t)=-\gamma(t)\).
+  </p>
+
+  <h3>Dwell time</h3>
+  <p>
+  Let us consider a state \(|\psi(t)\rangle\) of a quantum system that
+  evolves in time. In the ordinary quantum mechanics there is no general
+  method for the determination of durations. We can define a <i>dwell time</i>
+  <a href="#1">[1]</a> in the state \(|a\rangle\) as
+  \[
+  \tau_{\mathrm{Dw}}(T)=\int_0^T |\langle a|\psi(t)\rangle|^2\,\mathrm{d}t\,.
+  \]
+  The dwell time can be interpreted as a duration of time that the system
+  spends in the state $|a\rangle$ before time \(T\). As a particular
+  case, for spatial region between coordinates \(x_1\) and \(x_2\)
+  the dwell time is
+  \[
+  \tau_{\mathrm{Dw}}(T)=\int_0^T\mathrm{d}t\int_{x_1}^{x_2}\mathrm{d}x\,|\psi(x,t)|^2\,.
+  \]
+  We will show that the dwell time can be measured using weak measurements.
+  </p>
+  <p>
+  If the interaction strenght is small, to obtain meaningful information
+  about the quantum system the process of interaction has to be performed
+  on an ensemble of identical quantum systems. Each system with its
+  own detector is prepared in the same initial state, interacts with
+  the detector, and after the interaction time \(T\) the readings of
+  the detectors are collected and averaged. Let us consider the time
+  evolution of the quantum system together with the microscopic part
+  of the detector. This time evolution is described by the Hamiltonian
+  \[
+  H=H_{\mathrm{S}}+H_{\mathrm{I}}\,.
+  \]
+  Here \(H_{\mathrm{S}}\) is the Hamiltonian of the quantum system and
+  \[
+  H_{\mathrm{I}}=\gamma p_q\hat{P}_a
+  \]
+  describes the interaction with the detector as in a
+  <a href="simple_measurement.html">simple von Neumann measurement</a>.
+  The operator
+  \[
+  \hat{P}_a=|a\rangle\langle a|
+  \]
+  is the projection operator projecting into the sate \(|a\rangle\),
+  \(p_q\) is the momentum of the detector conjugate to the coordinate
+  of the detector \(q\), and the parameter \(\gamma\) describes the strength
+  of the interaction. In order to not disturb the evolution of the quantum
+  system, the parameter \(\gamma\) is very small. The interaction Hamiltonian
+  \(H_{\mathrm{I}}\) results in a small shift of the detector's position
+  \(q\). If the initial state of the detector has a width much larger
+  than this shift, the evolution of the quantum system is only slightly
+  disturbed.
+  </p>
+  <p>
+  From the classical point of view, the change of the detector's position
+  is proportional to the duration of time that the quantum system spends
+  in the state \(|a\rangle\). It is natural to extend the classical method
+  of the determination of the duration into the quantum mechanics too.
+  Therefore we assume that the change of the mean coordinate of the
+  detector is proportional to the time that the quantum system interacts
+  with the detector and this interaction time is the same as the time
+  the system spends in the state \(|a\rangle\). Thus we can define the
+  duration of time that the quantum system spends in the state \(|a\rangle\)
+  before time \(T\) as
+  \[
+  \tau(T)=\frac{1}{\gamma}(\langle q(T)\rangle-\langle q\rangle)\,,
+  \]
+  where \(\langle q\rangle\) and \(\langle q(T)\rangle\) are the mean
+  initial detector's coordinate and the mean coordinate after time \(T\).
+  We will show that such definition gives us the dwell time.
+  </p>
+  <p>
+  Before the interaction the detector is in the pure state \(|\phi\rangle\)
+  and the quantum system in the state \(|\psi(0)\rangle\), thus the initial
+  state of system and the detector is
+  \[
+  |\Psi(0)\rangle=|\psi(0)\rangle|\phi\rangle\,.
+  \]
+  At time \(t\) the state becomes
+  \[
+  |\Psi(t)\rangle=U(t)|\psi(0)\rangle|\phi\rangle\,,
+  \]
+  where \(U(t)\) is the unitary evolution operator obeying the equation
+  \[
+  \mathrm{i}\hbar\frac{\partial}{\partial t}U(t)=(H_{\mathrm{S}}+H_{\mathrm{I}})U(t)
+  \]
+  with the initial condition \(U(0)=I\). The time evolution of the unperturbed
+  quantum system is described by the evolution operator \(U_{\mathrm{S}}(t)\)
+  obeying the equation
+  \[
+  \mathrm{i}\hbar\frac{\partial}{\partial t}U_{\mathrm{S}}(t)=H_{\mathrm{S}}U_{\mathrm{S}}(t)\,.
+  \]
+  We can expand the operator \(U(t)\) into the power series of the powers
+  of parameter \(\gamma\), assuming that \(\gamma\) is small. Introducting
+  the projection operator in the interaction representation
+  \[
+  \tilde{P}_a(t)=U_{\mathrm{S}}^{\dagger}(t)\hat{P}_a U_{\mathrm{S}}(t)
+  \]
+  in the first-order approximation we have
+  \[
+  U(t)\approx U_{\mathrm{S}}(t)\left(1-\frac{\mathrm{i}}{\hbar}\gamma p_q
+  \int_0^t\tilde{P}_a(t')\,\mathrm{d}t'\right)\,.
+  \]
+  As a consequence,
+  \[
+  \langle q|U(t)|\psi\rangle|\phi\rangle
+  \approx|\psi(t)\rangle\langle q|\phi\rangle
+  -\frac{\mathrm{i}}{\hbar}\gamma\langle q|p_q|\phi\rangle
+  \int_0^t\mathrm{d}t'\,U_{\mathrm{S}}(t-t')\hat{P}_a|\psi(t')\rangle\,.
+  \]
+  The duration of the interaction with the detector is \(T\). After interaction,
+  applying the projective measurement of the postion \(q\) by the rest
+  of the detector with the result \(q'\) yields the probability to obtain
+  the outcome \(q'\)
+  \[
+  P(q')=\langle\phi|\langle\psi(0)|U^{\dagger}(T)|q'\rangle\langle q'|U(T)|\psi(0)\rangle|\phi\rangle\,.
+  \]
+  Keeping only the terms up to the first-order in interaction strength
+  \(\gamma\) we have
+  \[
+  P(q')\approx|\langle q'|\phi\rangle|^2
+  +\frac{\mathrm{i}}{\hbar}\gamma\langle\phi|[p_{q},|q'\rangle\langle q']|\phi\rangle
+  \int_0^T\langle\psi(t)|\hat{P}_a|\psi(t)\rangle\,\mathrm{d}t\,.
+  \]
+  The average of the post-measurement detector's coordinate \(q'\) is
+  \[
+  \langle q(T)\rangle=\int q'P(q')\,\mathrm{d}q'
+  \approx\langle q\rangle
+  +\frac{\mathrm{i}}{\hbar}\gamma\langle\phi|[p_q, q]|\phi\rangle
+  \int_0^T\langle\psi(t)|\hat{P}_a|\psi(t)\rangle\,\mathrm{d}t
+  =\langle q\rangle+\gamma\tau_{\mathrm{Dw}}(T)\,.
+  \]
+  Thus the dwell time can be determined from the shift of the average
+  coordinate
+  \[
+  \tau_{\mathrm{Dw}}(T)=\frac{1}{\gamma}(\langle q(T)\rangle-\langle q\rangle)\,.
+  \]
+  </p>
+  <hr style="width: 50%;">
+  <p>
+  <span id="1">[1]</span> V.&nbsp;S.&nbsp;Olkhovsky, E.&nbsp;Recami, <i>Recent developments in the time
+  analysis of tunneling processes</i>, Phys.&nbsp;Rep. <b>214</b>, 339 (1992).
+  </p>
+</section>
+
+</div>
+
+</body>
+</html>
