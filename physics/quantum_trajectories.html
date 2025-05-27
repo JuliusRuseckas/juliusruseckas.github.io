@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <script src="../scripts/echarts.min.js"></script>
+	<title>Quantum trajectory method</title>
+</head>
+<body>
+
+<header>
+	<h1>Quantum trajectory method</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+  <h3>Example: exponential decay</h3>
+  <p>
+  In order to demonstrate the stochastic trajectory method let us consider
+  a simple differential equation 
+  \[
+  \frac{\mathrm{d}}{\mathrm{d}t}x(t)=-\gamma x(t)
+  \]
+  that describes exponential decay of the variable \(x\). The solution
+  of this equation is
+  \[
+  x(t)=x(0)\mathrm{e}^{-\gamma t}\,.
+  \]
+  After a short time interval \(\Delta t\) (\(\Delta t\ll\gamma^{-1}\))
+  we can approximate the variable \(x\) as
+  \[
+  x(t+\Delta t)=x(t)-\gamma x(t)\Delta t
+  =x(t)(1-\gamma\Delta t)+0\cdot\gamma\Delta t\,.
+  \]
+  This equation can be interpreted in the following way: during the
+  time interval \(\Delta t\) two possibilities can occur. Either the
+  variable \(x\) stays the same, \(x(t+\Delta t)=x(t)\), with the probability
+  \(p_{\mathrm{same}}=1-\gamma\Delta t\) or \(x\) becomes \(0\) with the
+  probability \(p_{\mathrm{zero}}=\gamma\Delta t\). This interpretation
+  describes a stochastic trajectory \(\tilde{x}(t)\). Differential equation
+  can be replaced by a stochastic process, with the solution of the
+  equation recovered by averaging the trajectories \(\tilde{x}(t)\).
+  Numerically the trajectory \(\tilde{x}(t)\) can be obtained in the
+  following way: Replace the time \(t\) with discrete values \(t_n\)
+  having the step \(\Delta t\). For each time \(t_n\) generate a random
+  number \(r_n\) uniformly distributed in the interval \([0,1]\). The
+  next value \(\tilde{x}(t_{n+1})\) is determined according to the rule
+  \[
+  \tilde{x}(t_{n+1})=
+  \begin{cases}
+  \tilde{x}(t_n)\,, &amp; r_n > p_{\mathrm{zero}}\,,\\
+  0\,, &amp; r_n < p_{\mathrm{zero}}\,.
+  \end{cases}
+  \]
+  </p>
+  <h3>Numerical simulation</h3>
+  <div id="figureWrapper" style="width: 100%; height: 600px;"></div>
+  <div id="figureControl" style="text-align: center;">
+    <label for="traj_inp">Number of trajectories:</label>
+    <input id="traj_inp" name="traj_inp" type="number" min="1" max="10000" step="1" value="100">
+    <label for="steps_inp">Number of time steps:</label>
+    <input id="steps_inp" name="steps_inp" type="number" min="1" max="200" step="1" value="50">
+    <button id="start" name="start">Simulate</button>
+  </div>
+  <script src="./quantum_trajectories.js"></script>
+
+  <h3>Quantum trajectory method</h3>
+  <p>
+  Stochastic simulation methods provide an alternative to the description
+  of a quantum system using a density matrix. A particular stochastic
+  method, the theory of quantum trajectories, has been developed by
+  many authors <a href="#ref1">[1&ndash;8]</a>. This method describes the evolution of the
+  quantum system in time by means of quantum trajectories for the states
+  of the system subjected to random quantum jumps. The quantum trajectory
+  is calculated by integrating the time-dependent Schrödinger equation
+  using a non-Hermitian effective Hamiltonian. Incoherent processes
+  such as spontaneous emission are incorporated as random quantum jumps
+  that cause a collapse of the wave function to a single state <a href="#Carmichael1993">[6]</a>.
+  The results for the density matrix are obtained by repeating the stochastic
+  simulations several times and calculating the average. Using stochastic
+  methods one can examine the behavior of individual trajectories, thus
+  such methods can provide a description of an experiment on a single
+  system in a more direct way.
+  </p>
+  <p>
+  We start by assuming that the Markovian approximation for the description
+  of time evolution is valid. The dynamics of the quantum system is
+  described by a master equation
+  \[
+  \frac{\partial}{\partial t}\rho(t)=\mathcal{M}\rho\,,
+  \]
+  where \(\mathcal{M}\) is the superoperator describing the time evolution
+  and \(\rho\) is the density matrix of the quantum system. Let us consider
+  the superoperator \(\mathcal{M}\) that can be separated into two parts:
+  \[
+  \mathcal{M}=\mathcal{L}+\mathcal{J}\,.
+  \]
+  The part \(\mathcal{J}\) is interpreted as describing quantum jumps,
+  and \(\mathcal{L}\) describes the jump-free evolution. After a short
+  time interval \(\Delta t\) the density matrix is
+  \[
+  \rho(t+\Delta t)=\rho(t)+\mathcal{L}\rho(t)\Delta t+\mathcal{J}\rho(t)\Delta t\,.
+  \]
+  Since the master equation should preserve the trace of the density
+  matrix, we have the equality
+  \[
+  \mathrm{Tr}\{\mathcal{L}\rho(t)\}+\mathrm{Tr}\{\mathcal{J}\rho(t)\}=0\,.
+  \]
+  Thus we can write
+  \[
+  \rho(t+\Delta t)=\frac{\rho+\mathcal{L}\rho(t)\Delta t}{1+\mathrm{Tr}\{\mathcal{L}\rho(t)\}\Delta t}(1-\mathrm{Tr}\{\mathcal{J}\rho(t)\}\Delta t)
+  +\frac{\mathcal{J}\rho(t)}{\mathrm{Tr}\{\mathcal{J}\rho(t)\}}\mathrm{Tr}\{\mathcal{J}\rho(t)\}\Delta t\,.
+  \]
+  This equation can be interpreted in the following way: during the
+  time interval \(\Delta t\) two possibilities can occur. Either after
+  time \(\Delta t\) the density matrix is equal to conditional density
+  matrix
+  \[
+  \rho_{\mathrm{jump}}(t+\Delta t)=\frac{\mathcal{J}\rho(t)}{\mathrm{Tr}\{\mathcal{J}\rho(t)\}}
+  \]
+  with the probability
+  \[
+  p_{\mathrm{jump}}(t)=\mathrm{Tr}\{\mathcal{J}\rho(t)\}\Delta t
+  \]
+  or to the density matrix
+  \[
+  \rho_{\text{no-jump}}(t+\Delta t)=\frac{\rho+\mathcal{L}\rho(t)\Delta t}{1+\mathrm{Tr}\{\mathcal{L}\rho(t)\}\Delta t}
+  \]
+  with the probability \(1-p_{\mathrm{jump}}(t)\). This interpretation
+  describes a stochastic trajectory \(\tilde{\rho}(t)\). The master equation
+  can be replaced by a stochastic process, with the solution of the
+  equation recovered by averaging the trajectories \(\tilde{\rho}(t)\).
+  </p>
+  <p>
+  Let us further assume that the superoperators \(\mathcal{L}\) and \(\mathcal{J}\)
+  have the form
+  \[
+  \mathcal{L}\rho=\frac{1}{i\hbar}(H_{\mathrm{eff}}\rho-\rho H_{\mathrm{eff}}^{\dagger})
+  \]
+  and
+  \[
+  \mathcal{J}\rho=C\rho C^{\dagger}\,.
+  \]
+  The operators \(H_{\mathrm{eff}}\) and \(C\) are non-Hermitian in general.
+  If the superoperators \(\mathcal{L}\) and \(\mathcal{J}\) have this
+  form and the density matrix at the time \(t\) factorizes as \(\rho(t)=|\Psi(t)\rangle\langle\Psi(t)|\)
+  then after time interval \(\Delta t\) the density matrices \(\rho_{\mathrm{jump}}(t+\Delta t)\)
+  and \(\rho_{\text{no-jump}}(t+\Delta t)\) factorize also.
+  Therefore, the equation for the density matrix can be replaced by
+  the corresponding equations for the state vectors. The state vector
+  after time \(\Delta t\) in which a jump is recorded is given by
+  \[
+  |\Psi_{\mathrm{jump}}(t+\Delta t)\rangle=
+  \frac{1}{\sqrt{\langle\Psi(t)|C^{\dagger}C|\Psi(t)\rangle}}C|\Psi(t)\rangle\,.
+  \]
+  The probability of a jump occurring in the time interval \(\Delta t\)
+  is
+  \[
+  p_{\mathrm{jump}}(t)=\langle\Psi(t)|C^{\dagger}C|\Psi(t)\rangle\Delta t\,.
+  \]
+  If no jump occurs, the state vector evolves according to the non-Hermitian
+  Hamiltonian \(H_{\mathrm{eff}}\),
+  \[
+  |\Psi_{\text{no-jump}}(t+\Delta t)\rangle
+  =\frac{1}{\sqrt{\langle\Psi(t)|\left(1+\frac{\mathrm{i}}{\hbar}(H_{\mathrm{eff}}^{\dagger}-H_{\mathrm{eff}})\Delta t\right)|\Psi(t)\rangle}}
+  \left(1-\frac{\mathrm{i}}{\hbar}H_{\mathrm{eff}}\Delta t\right)|\Psi(t)\rangle\,.
+  \]
+  </p>
+  <p>
+  Numerical simulation takes place over discrete time with time step
+  \(\Delta t\). When the wave function \(|\Psi(t_n)\rangle\) is given,
+  the wave function \(|\Psi(t_{n+1})\rangle\) is determined by the following
+  algorithm <a href="#Carmichael1993">[6]</a>:
+  <ol>
+    <li>Generate a random number \(r_n\) uniformly distributed in the interval \([0,1]\).</li>
+    <li>Evaluate the collapse probability \(p_{\mathrm{jump}}(t_n)\).</li>
+    <li>
+      Compare \(p_{\mathrm{jump}}(t_n)\) with \(r_n\) and calculate \(|\Psi(t_{n+1})\rangle\) (unnormalized) according to the rule
+      \[
+      |\Psi(t_{n+1})\rangle\sim
+      \begin{cases}
+      C|\Psi(t_{n})\rangle\,, &amp; r_n < p_{\mathrm{jump}}(t_n)\,,\\
+      \exp\left(-\frac{\mathrm{i}}{\hbar}H_{\mathrm{eff}}\Delta t\right)|\Psi(t_n)\rangle\,, &amp; r_n > p_{\mathrm{jump}}(t_n)\,.
+      \end{cases}
+      \]
+    </li>
+  </ol>
+  We can approximate the second case as
+  \[
+  |\Psi(t_{n+1})\rangle\sim\left(1-\frac{\mathrm{i}}{\hbar}H_{\mathrm{eff}}\Delta t\right)|\Psi(t_n)\rangle\,.
+  \]
+  </p>
+  <hr style="width: 50%;">
+  <ol>
+    <li id="ref1">
+      N.&nbsp;Gisin,
+      <i>Quantum Measurements and Stochastic Processes</i>,
+      Phys.&nbsp;Rev.&nbsp;Lett. <b>52</b>, 1657 (1984).
+    </li>
+    <li>
+      J.&nbsp;Dalibard, Y.&nbsp;Castin, and K.&nbsp;Mølmer,
+      <i>Wave-function approach to dissipative processes in quantum optics</i>,
+      Phys.&nbsp;Rev.&nbsp;Lett. <b>68</b>, 580 (1992).
+    </li>
+    <li>
+      N.&nbsp;Gisin and I.&nbsp;C.&nbsp;Percival,
+      <i>The quantum-state diffusion model applied to open systems</i>,
+      J.&nbsp;Phys.&nbsp;A:&nbsp;Math.&nbsp;Gen. <b>25</b>, 5677 (1992).
+    </li>
+    <li>
+      R.&nbsp;Dum, P.&nbsp;Zoller, and H.&nbsp;Ritsch,
+      <i>Monte Carlo simulation of the atomic master equation for spontaneous emission</i>,
+      Phys.&nbsp;Rev.&nbsp;A <b>45</b>, 4879 (1992).
+    </li>
+    <li>
+      C.&nbsp;W.&nbsp;Gardiner, A.&nbsp;S.&nbsp;Parkins, and P.&nbsp;Zoller,
+      <i>Wave-function quantum stochastic differential equations and quantum-jump simulation methods</i>,
+      Phys.&nbsp;Rev.&nbsp;A <b>46</b>, 4363 (1992).
+    </li>
+    <li id="Carmichael1993">
+      H.&nbsp;Carmichael,
+      <i>An Open Systems Approach to Quantum Optics</i>
+      (Springer-Verlag, Berlin, 1993), ISBN 9783662139264.
+    </li>
+    <li>
+      K.&nbsp;Mølmer, Y.&nbsp;Castin, and J.&nbsp;Dalibard,
+      <i>Monte Carlo wave-function method in quantum optics</i>,
+      J.&nbsp;Opt.&nbsp;Soc.&nbsp;Am.&nbsp;B <b>10</b>, 524 (1993).
+    </li>
+    <li>
+      R.&nbsp;Schack, T.&nbsp;A.&nbsp;Brun, and I.&nbsp;C.&nbsp;Percival,
+      <i>Quantum state diffusion, localization and computation</i>,
+      J.&nbsp;Phys.&nbsp;A:&nbsp;Math.&nbsp;Gen. <b>28</b>, 5401 (1995).
+    </li>
+  </ol>
+
+</section>
+
+</div>
+
+</body>
+</html>
