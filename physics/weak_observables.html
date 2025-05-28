@@ -68,13 +68,103 @@
   briefly switched on at times \(t\) and \(t+\Delta t\) with the change
   of the sign of interaction strength, \(\gamma(t+\Delta t)=-\gamma(t)\).
   </p>
+  <p> 
+  There is an interesting alternative approach to measure probability
+  current using weak measurements on post-selected ensemble. We start
+  from the classical definition of velocity as a position change during
+  a time interval divided by the duration of the time interval. This
+  classical definition of velocity cannot be transferred to quantum
+  mechanics using usual measurements because the position measurement
+  collapses the wave function and completely changes subsequent time
+  evolution of the quantum system. However, using weak measurements
+  we can employ a weak measurement of the position first, followed by
+  an usual measurement after a short time. In this way, following the
+  classical definition of the velocity we can define weak velocity as
+  \[
+  v(x)=\lim_{\Delta t\rightarrow0}\frac{1}{\Delta t}(x-\langle\hat{x}\rangle_{x,\Delta t})\,,
+  \]
+  where \(\langle\hat{x}\rangle_{x,\Delta t}\) is a weak value of the
+  position in an ensemble post-selected to have position \(x\) after
+  the time \(\Delta t\). We will show that such a definition of weak velocity
+  is related to the probability current \(j(x)\) as \(j(x)=\rho(x)\mathrm{Re}\,v(x)\),
+  where \(\rho(x)\) is the probability density.
+  </p>
+  <p>
+  Before the measurement the quantum system is in the state \(|\psi\rangle\).
+  After the interaction with the detector the state of the quantum system
+  and the detector becomes \(|\Psi'\rangle\) and after time \(\Delta t\) this state evolves to
+  \[
+  |\Psi'(\Delta t)\rangle=U_{\mathrm{S}}(\Delta t)|\Psi'\rangle\,.
+  \]
+  Here \(U_{\mathrm{S}}(t)\) is the unitary evolution operator of the
+  quantum system obeying the equation
+  \[
+  \mathrm{i}\hbar\frac{\partial}{\partial t}U_{\mathrm{S}}(t)=H_{\mathrm{S}}U_{\mathrm{S}}(t)\,,
+  \]
+  where
+  \[
+  H_{\mathrm{S}}=\frac{p^{2}}{2M}+V(x)
+  \]
+  is the Hamiltonian of the quantum system. We see that projection of
+  the state \(|\Psi'(\Delta t)\rangle\) on the state \(|x\rangle\) is
+  the same as projection of the state \(|\Psi'\rangle\) on the state
+  evolved backwards in time \(U_{\mathrm{S}}^{\dagger}(\Delta t)|x\rangle\). Thus
+  the weak value of the postion is
+  \[
+  \langle\hat{x}\rangle_{x,\Delta t}=
+  \frac{\langle x|U_{\mathrm{S}}(\Delta t)\hat{x}|\psi\rangle}{\langle x|U_{\mathrm{S}}(\Delta t)|\psi\rangle}\,.
+  \]
+  Since \(\Delta t\) is small, keeping only the terms up to first-order
+  in \(\Delta t\) we have
+  \[
+  U_{\mathrm{S}}(\Delta t)\approx 1-\frac{\mathrm{i}}{\hbar}\Delta t H_{\mathrm{S}}
+  \]
+  and
+  \[
+  \langle\hat{x}\rangle_{x,\Delta t}\approx x
+  +\frac{\mathrm{i}}{\hbar}\Delta t\frac{1}{\langle x|\psi\rangle}\langle x|[\hat{x},H_{\mathrm{S}}]|\psi\rangle
+  \]
+  Using
+  \[
+  [\hat{x},H_{\mathrm{S}}]=\frac{\mathrm{i}\hbar}{M}p
+  \]
+  we obtain
+  \[
+  \langle\hat{x}\rangle_{x,\Delta t}\approx
+  x-\frac{\Delta t}{M}\frac{\langle x|p|\psi\rangle}{\langle x|\psi\rangle}
+  =x+\mathrm{i}\frac{\hbar\Delta t}{M}\frac{1}{\psi(x)}\frac{\partial}{\partial x}\psi(x)\,,
+  \]
+  therefore the weak velocity is
+  \[
+  v(x)=\frac{\hbar}{Mi}\frac{1}{\psi(x)}\frac{\partial}{\partial x}\psi(x)\,.
+  \]
+  The real part takes the form
+  \[
+  \mathrm{Re}\,v(x)=
+  \frac{1}{|\psi(x)|^{2}}\frac{\hbar}{2Mi}\left(\psi^{*}(x)\frac{\partial}{\partial x}\psi(x)
+  -\psi(x)\frac{\partial}{\partial x}\psi^{*}(x)\right)
+  =\frac{j(x)}{\rho(x)}\,.
+  \]
+  </p>
+  <p>
+  The third way to use weak measurements for determination of the probability current is
+  weak measurement of the momentum \(p\) in an ensemble post-selected on position \(x\), yielding the weak value
+  \[
+  \langle p\rangle_x = \frac{\langle x|p|\psi\rangle}{\langle x|\psi\rangle}\,.
+  \]
+  The probability current then can be expressed as
+  \[
+  j(x)=\frac{1}{M}\rho(x)\mathrm{Re}\,\langle p\rangle_x\,.
+  \]
+  This method has been used in an experiment described in Ref.&nbsp;<a href="#1">[1]</a>.
+  </p>
 
   <h3>Dwell time</h3>
   <p>
   Let us consider a state \(|\psi(t)\rangle\) of a quantum system that
   evolves in time. In the ordinary quantum mechanics there is no general
   method for the determination of durations. We can define a <i>dwell time</i>
-  <a href="#1">[1]</a> in the state \(|a\rangle\) as
+  <a href="#refDwell">[2]</a> in the state \(|a\rangle\) as
   \[
   \tau_{\mathrm{Dw}}(T)=\int_0^T |\langle a|\psi(t)\rangle|^2\,\mathrm{d}t\,.
   \]
@@ -205,10 +295,19 @@
   \]
   </p>
   <hr style="width: 50%;">
-  <p>
-  <span id="1">[1]</span> V.&nbsp;S.&nbsp;Olkhovsky, E.&nbsp;Recami, <i>Recent developments in the time
-  analysis of tunneling processes</i>, Phys.&nbsp;Rep. <b>214</b>, 339 (1992).
-  </p>
+  <ol>
+    <li id="ref1">
+      S.&nbsp;Kocsis, B.&nbsp;Braverman, S.&nbsp;Ravets, M.&nbsp;J.&nbsp;Stevens, R.&nbsp;P.&nbsp;Mirin,
+      L.&nbsp;K&nbsp;Shalm, and A.&nbsp;M.&nbsp;Steinberg,
+      <i>Observing the Average Trajectories of Single Photons in a Two-Slit Interferometer</i>,
+      Science <b>332</b>, 1170 (2011).
+    </li>
+    <li id="refDwell">
+      V.&nbsp;S.&nbsp;Olkhovsky, E.&nbsp;Recami,
+      <i>Recent developments in the time analysis of tunneling processes</i>,
+      Phys.&nbsp;Rep. <b>214</b>, 339 (1992).
+    </li>
+  </ol>
 </section>
 
 </div>
