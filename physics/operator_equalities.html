@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>Equalities for operators</title>
+</head>
+<body>
+
+<header>
+	<h1>Equalities for operators</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+  <h3>Operator transformation</h3>
+  <p>
+  We will consider the expression \(\mathrm{e}^{\hat{A}}\hat{B}\mathrm{e}^{-\hat{A}}\)
+  with operators \(\hat{A}\) and \(\hat{B}\). In order to derive a formula
+  we introduce an auxiliary operator \(\hat{F}(t)=\mathrm{e}^{\hat{A}t}\hat{B}\mathrm{e}^{-\hat{A}t}\)
+  that depends on the parameter \(t\). The operator \(\hat{F}(t)\) obeys
+  the differential equation
+  \[
+  \frac{\mathrm{d}}{\mathrm{d}t}\hat{F}(t)=[\hat{A},\hat{F}(t)]
+  \]
+  with the initial condition \(\hat{F}(0)=\hat{B}\). From this differential
+  equation we obtain an integral equation
+  \[
+  \hat{F}(t)=\hat{B}+\int_{0}^{t}[\hat{A},\hat{F}(t_{1})]\,\mathrm{d}t_{1}\,.
+  \]
+  The solution can be written as \(\hat{F}=\hat{F}_0 + \hat{F}_1 + \hat{F}_2 + \cdots\),
+  where \(\hat{F}_0 = \hat{B}\) and
+  \[
+  \hat{F}_{n+1}(t)=\int_0^t [\hat{A},\hat{F}_n (t_1 )]\,\mathrm{d}t_1\,.
+  \]
+  The integral in the term \(\hat{F}_n\) is of the form
+  \[
+  \int_0^t\mathrm{d}t_1\cdots\int_0^{t_{n-1}}\mathrm{d}t_n
+  = \frac{1}{n!}\int_0^t\mathrm{d}t_1\cdots\int_0^t\mathrm{d}t_n
+  = \frac{1}{n!}t^n\,.
+  \]
+  We obtain
+  \[
+  \hat{F}(t)=\hat{B}+t[\hat{A},\hat{B}]+\frac{1}{2!}t^{2}[\hat{A},[\hat{A},\hat{B}]]+\cdots\,.
+  \]
+  Substituting \(t=1\) we get the equation
+  \[
+  \mathrm{e}^{\hat{A}}\hat{B}\mathrm{e}^{-\hat{A}}=\hat{B}+[\hat{A},\hat{B}]+\frac{1}{2!}[\hat{A},[\hat{A},\hat{B}]]+\cdots\,.
+  \]
+  </p>
+  <p>
+  In partucular, if the commutator \([\hat{A},\hat{B}]\) commutes with
+  both operators \(\hat{A}\) and \(\hat{B}\), \([[\hat{A},\hat{B}],\hat{A}]=[[\hat{A},\hat{B}],\hat{B}]=0\),
+  the equation takes the form
+  \[
+  \exp(\hat{A}t)\hat{B}\exp(-\hat{A}t)=\hat{B}+t[\hat{A},\hat{B}]\,.
+  \]
+  </p>
+
+  <h3 id="BCH">Baker-Campbell-Hausdorff formula</h3>
+  <p>
+  We will derive the formula for the operator \(\mathrm{e}^{\hat{A}+\hat{B}}\)
+  when the commutator \([\hat{A},\hat{B}]\) commutes with both operators
+  \(\hat{A}\) and \(\hat{B}\). For this purpose we introduce an auxiliary
+  operator \(\hat{F}(t)=\mathrm{e}^{(\hat{A}+\hat{B})t}\) that depends
+  on the parameter \(t\). This operator obeys the diferential equation
+  \[
+  \frac{\mathrm{d}\hat{F}}{\mathrm{d}t}=(\hat{A}+\hat{B})\hat{F}
+  \]
+  with the initial condition \(\hat{F}(0)=1\). We search the solution
+  in the form
+  \[
+  \hat{F}(t)=\mathrm{e}^{\hat{A}t}\mathrm{e}^{\hat{B}t}\hat{X}(t)\,,
+  \]
+  where \([\hat{X}(t),\hat{A}]=0\) and \([\hat{X}(t),\hat{B}]=0\). The
+  derivative with respoect to \(t\) is
+  \[
+  \begin{aligned}
+  \frac{\mathrm{d}\hat{F}}{\mathrm{d}t} &amp; = \mathrm{e}^{\hat{A}t}\mathrm{e}^{\hat{B}t}\frac{\mathrm{d}\hat{X}(t)}{\mathrm{d}t}
+  +\hat{A}\mathrm{e}^{\hat{A}t}\mathrm{e}^{\hat{B}t}\hat{X}(t)
+  +\mathrm{e}^{\hat{A}t}\hat{B}\mathrm{e}^{\hat{B}t}\hat{X}(t)\\
+  &amp; = \frac{\mathrm{d}\hat{X}(t)}{\mathrm{d}t}\mathrm{e}^{\hat{A}t}\mathrm{e}^{\hat{B}t}
+  +\hat{A}\hat{F}(t)+(\hat{B}+t[\hat{A},\hat{B}])\hat{F}(t)\,.
+  \end{aligned}
+  \]
+  Taking into account the differential equation for the operator \(\hat{F}(t)\)
+  we get
+  \[
+  \frac{\mathrm{d}\hat{X}(t)}{\mathrm{d}t}=-t[\hat{A},\hat{B}]\hat{X}(t)\,.
+  \]
+  The solution of this equation is \(\hat{X}(t)=\exp\left(-\frac{t^{2}}{2}[\hat{A},\hat{B}]\right)\).
+  Taking \(t=1\) we obtain the formula
+  \[
+  \mathrm{e}^{\hat{A}+\hat{B}}=\mathrm{e}^{\hat{A}t}\mathrm{e}^{\hat{B}t}\mathrm{e}^{-\frac{1}{2}[\hat{A},\hat{B}]}\,.
+  \]
+  </p>
+</section>
+
+</div>
+
+</body>
+</html>
