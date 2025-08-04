@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>Bohmian mechanics</title>
+</head>
+<body>
+
+<header>
+	<h1>Bohmian mechanics</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+
+  <h3>Postulate 1</h3>
+  <p>
+  The complete description of a closed quantum system consisting
+  of \(N\) particles is provided by its configuration \(Q\), defined by
+  the positions \(\boldsymbol{Q}_1,\ldots,\boldsymbol{Q}_N\) of the
+  particles, together with the wave function \(\Psi=\Psi(\boldsymbol{q}_1,\ldots,\boldsymbol{q}_N)\).
+  Particles with spin are described by spinor-valued wave functions.
+  </p>
+
+  <h3>Postulate 2</h3>
+  <p>
+  Configuration \(Q\) of a quantum system is random, the
+  probability density for the configuration satisfies the
+  <i>quantum equilibrium distribution</i>
+  \[
+  \rho(Q)=|\Psi(Q)|^2\,.
+  \]
+  </p>
+
+  <h3>Postulate 3</h3>
+  <p>
+  The change in time of the state of a closed quantum system
+  is given by the guiding equation
+  \[
+  \frac{\mathrm{d}\boldsymbol{Q}_k}{\mathrm{d}t}=\mathbf{v}_k(Q)
+  \]
+  and the Schrödinger's equation
+  \[
+  \mathrm{i}\hbar\frac{\partial}{\partial t}\Psi=H\Psi\,,
+  \]
+  were \(H\) is the Hamiltonian and 
+  \[
+  \mathbf{v}_k=\frac{1}{\rho}\boldsymbol{J}_k(\boldsymbol{Q}_1,\ldots\boldsymbol{Q}_N)
+  =\frac{\hbar}{M_k}\mathrm{Im}\frac{\nabla_k\Psi}{\Psi}
+  \]
+  is the velocity field on configuration space determined by the wave
+  function. Here \(\rho\) is the probability density, \(\boldsymbol{J}_k\)
+  is the probability current and
+  \[
+  \nabla_k=\frac{\partial}{\partial\boldsymbol{q}_k}\,.
+  \]
+  </p>
+
+  <h3>Postulate 4</h3>
+  <p>
+  The things that are genuinely measured in experiments
+  are the positions of particles given by the configuration \(Q\), particularly
+  the position of the apparatus pointer.
+  </p>
+  <p>
+  The result \(Z\) of an experiment is determined by the initial configuration
+  \(Q=(X,Y)\) of the system \(X\) and apparatus \(Y\). The initial complete
+  state \((Q,\Psi)\) of the system and apparatus evolves deterministically
+  and uniquely determines the outcome of the experiment. However, as
+  the initial configuration \(Q\) is in quantum equilibrium, the outcome
+  of the experiment is random. The role of the apparatus in many real-world
+  experiments is to provide suitable background fields, which introduce
+  no randomness, as well as a final detection, a measurement of the
+  actual positions of the particles of the system. After the measurement
+  the effective wave function of the system is the conditional wave
+  function \(\psi(x)=\Psi(x,Y)\).
+  </p>
+  <hr style="width: 50%;">
+  <ol>
+    <li>
+      P.&nbsp;R.&nbsp;Holland, <i>The Quantum Theory of Motion</i>,
+      (Cambridge University Press, Cambridge, 1993).
+    </li>
+    <li>
+      D.&nbsp;Dürr, S.&nbsp;Goldstein, N.&nbsp;Zanghì,
+      <i>Quantum Physics Without Quantum Philosophy</i>,
+      (Springer-Verlag Berlin Heidelberg, 2013), ISBN 978-3-642-30689-1.
+    </li>
+  </ol>
+</section>
+
+</div>
+
+</body>
+</html>
