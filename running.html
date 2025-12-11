@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<title>Running</title>
+
+<style>
+table { counter-reset: rowNumber; }
+table tr:first-child::before { display: table-cell; content: ""; }
+table tr:not(:first-child)::before { display: table-cell; counter-increment: rowNumber;
+	content: counter(rowNumber) "."; padding-right: 0.3em; text-align: right; }
+</style>
+</head>
+<body>
+
+<header>
+	<h1>Running</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+
+<h2>Marathons</h2>
+<table>
+	<tr>
+		<th>Marathon</th><th>Date</th><th>Time</th>
+	</tr>
+	<tr>
+		<td>Vilnius Marathon</td><td>2025.09.14</td><td>04:43:11</td>
+	</tr>
+	<tr>
+		<td>Riga Marathon</td><td>2025.05.18</td><td>04:17:38</td>
+	</tr>
+	<tr>
+		<td>Rome Marathon</td><td>2025.03.16</td><td>04:16:58</td>
+	</tr>
+	<tr>
+		<td>Frankfurt Marathon</td><td>2024.10.27</td><td>04:07:02</td>
+	</tr>
+	<tr>	
+		<td>Tallinn Marathon</td><td>2024.09.08</td><td>04:11:39</td>
+	</tr>
+	<tr>
+		<td>Kaunas Marathon</td><td>2024.04.28</td><td>04:29:32</td>
+	</tr>
+	<tr>
+		<td>Tallinn Marathon</td><td>2023.09.10</td><td>04:30:07</td>
+	</tr>
+	<tr>
+		<td>Riga Marathon</td><td>2023.05.07</td><td>04:11:28</td>
+	</tr>
+	<tr>
+		<td>Frankfurt Marathon</td><td>2022.10.30</td><td>04:24:58</td>
+	</tr>
+	<tr>
+		<td>Vilnius Marathon</td><td>2022.09.11</td><td>04:26:46</td>
+	</tr>
+	<tr>
+		<td>Riga Marathon</td><td>2022.05.15</td><td>04:10:52</td>
+	</tr>
+	<tr>
+		<td>Vilnius Marathon</td><td>2021.09.12</td><td>04:10:45</td>
+	</tr>
+	<tr>
+		<td>Vilnius Marathon</td><td>2020.09.13</td><td>04:07:51</td>
+	</tr>
+	<tr>
+		<td>Frankfurt Marathon</td><td>2019.10.27</td><td>04:19:17</td>
+	</tr>
+	<tr>
+		<td>Vilnius Marathon</td><td>2019.09.08</td><td>04:12:06</td>
+	</tr>
+</table>
+
+</section>
+
+<nav>
+	<a href="index.html">Main</a>
+	<a href="cv.html">Curriculum Vitae</a>
+	<a href="publications.html">List of Publications</a>
+	<a href="slides.html">Slides and Posters</a>
+	<a href="ml.html">Machine Learning</a>
+	<a href="physics.html">Physics</a>
+	<a href="#">Running</a>
+	<a href="calc.html">Calculator</a>
+	<a href="links.html">Links</a>
+</nav>
+</div>
+
+</body>
+</html>
