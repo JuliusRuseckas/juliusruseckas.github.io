@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../style.css">
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+	<title>Stochastic differential equation for quantum trajectories</title>
+</head>
+<body>
+
+<header>
+	<h1>Stochastic differential equation for quantum trajectories</h1>
+</header>
+
+<div class="flex-container">
+
+<section>
+  <p>
+  Let us consider a quantum system with the dynamics described by the
+  master equation
+  \[
+  \frac{\partial}{\partial t}\rho(t)=\frac{1}{\mathrm{i}\hbar}(H_{\mathrm{eff}}\rho
+  -\rho H_{\mathrm{eff}}^{\dagger})+C\rho C^{\dagger}\,.
+  \]
+  The last term of this equation is interpreted as describing quantum
+  jumps, the remaining terms describe the jump-free evolution. The operators
+  \(H_{\mathrm{eff}}\) and \(C\) are non-Hermitian in general.
+  </p>
+  <p>
+  We express the the density matrix \(\rho\) in the following form:
+  \[
+  \rho(t)=\overline{|\Psi(t)\rangle\langle\Psi(t)|}\,,
+  \]
+  where \(\overline{\cdot}\) denotes averaging over different realizations
+  of trajectories \(|\Psi(t)\rangle\). Let us consider \(|\Psi(t)\rangle\)
+  obeying the Itô stochastic differential equation
+  \[
+  \mathrm{d}|\Psi(t)\rangle=\frac{1}{\mathrm{i}\hbar}H_{\mathrm{eff}}|\Psi(t)\rangle\mathrm{d}t
+  +C|\Psi(t)\rangle\mathrm{d}W_t\,,\label{schr-sde}\tag{1}
+  \]
+  where \(W_t\) is a real Wiener process having the properties
+  \[
+  \overline{\mathrm{d}W_t}=0\,,\qquad\overline{\mathrm{d}W_t^2}=\mathrm{d}t\,.
+  \]
+  Then
+  \[
+  \begin{aligned}
+  |\Psi(t+\mathrm{d}t)\rangle\langle\Psi(t+\mathrm{d}t)|=|\Psi\rangle\langle\Psi|
+  &amp;+ \frac{1}{\mathrm{i}\hbar}\bigl(H_{\mathrm{eff}}|\Psi\rangle\langle\Psi|
+  -|\Psi\rangle\langle\Psi|H_{\mathrm{eff}}^{\dagger}\bigr)\mathrm{d}t \\
+  &amp; +\bigl(C|\Psi\rangle\langle\Psi|+|\Psi\rangle\langle\Psi|C^{\dagger}\bigr)\mathrm{d}W_t
+  +C|\Psi\rangle\langle\Psi|C^{\dagger}\mathrm{d}W_t^2\,.
+  \end{aligned}
+  \]
+  Taking average and using Itô calculus one has
+  \[
+  \rho(t+\mathrm{d}t)-\rho(t)=\frac{1}{\mathrm{i}\hbar}(H_{\mathrm{eff}}\rho
+  -\rho H_{\mathrm{eff}}^{\dagger})\mathrm{d}t+C\rho C^{\dagger}\mathrm{d}t\,.
+  \]
+  This is the required equation for the density matrix. Therefore, the
+  stochastic Schrödinger equation (<a href="#mjx-eqn:schr-sde">1</a>) for the wave function \(|\Psi(t)\rangle\)
+  leads to the master equation for the density matrix \(\rho(t)\). Instead
+  of equation (<a href="#mjx-eqn:schr-sde">1</a>) we can take the stochastic differential equation
+  \[
+  \mathrm{d}|\Psi(t)\rangle=\frac{1}{\mathrm{i}\hbar}H_{\mathrm{eff}}|\Psi(t)\rangle\mathrm{d}t
+  +a^{*}\left(C-\frac{1}{2}a\right)|\Psi(t)\rangle\mathrm{d}t+(C-a)|\Psi(t)\rangle\mathrm{d}W_t\,,
+  \]
+  where \(a\) is a complex number.
+  </p>
+  <p>
+  Equation (<a href="#mjx-eqn:schr-sde">1</a>) does not conserve the norm of the wave function \(|\Psi(t)\rangle\).
+  Indeed, using Itô calculus we get
+  \[
+  d\Vert\Psi\Vert^{2}=
+  \frac{1}{\mathrm{i}\hbar}\langle\Psi|H_{\mathrm{eff}}-H_{\mathrm{eff}}^{\dagger}|\Psi\rangle\mathrm{d}t
+  +\langle\Psi|C^{\dagger}C|\Psi\rangle\mathrm{d}t+\langle\Psi|C
+  +C^{\dagger}|\Psi\rangle\mathrm{d}W_t\,.
+  \]
+  </p>
+</section>
+
+</div>
+
+</body>
+</html>
