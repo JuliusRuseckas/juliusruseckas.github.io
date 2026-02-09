@@ -64,7 +64,7 @@
   of equation (<a href="#mjx-eqn:schr-sde">1</a>) we can take the stochastic differential equation
   \[
   \mathrm{d}|\Psi(t)\rangle=\frac{1}{\mathrm{i}\hbar}H_{\mathrm{eff}}|\Psi(t)\rangle\mathrm{d}t
-  +a^{*}\left(C-\frac{1}{2}a\right)|\Psi(t)\rangle\mathrm{d}t+(C-a)|\Psi(t)\rangle\mathrm{d}W_t\,,
+  +\frac{1}{2}a^{*}(2C-a)|\Psi(t)\rangle\mathrm{d}t+(C-a)|\Psi(t)\rangle\mathrm{d}W_t\,,
   \]
   where \(a\) is a complex number.
   </p>
@@ -72,11 +72,30 @@
   Equation (<a href="#mjx-eqn:schr-sde">1</a>) does not conserve the norm of the wave function \(|\Psi(t)\rangle\).
   Indeed, using Itô calculus we get
   \[
-  d\Vert\Psi\Vert^{2}=
+  \mathrm{d}\Vert\Psi\Vert^{2}=
   \frac{1}{\mathrm{i}\hbar}\langle\Psi|H_{\mathrm{eff}}-H_{\mathrm{eff}}^{\dagger}|\Psi\rangle\mathrm{d}t
   +\langle\Psi|C^{\dagger}C|\Psi\rangle\mathrm{d}t+\langle\Psi|C
   +C^{\dagger}|\Psi\rangle\mathrm{d}W_t\,.
   \]
+  The sum of the first two terms in this equation is equal to zero because
+  the master equation for the density matrix should be trace preserving.
+  Therefore
+  \[
+  \mathrm{d}\Vert\Psi\Vert^{2}=\langle\Psi|C+C^{\dagger}|\Psi\rangle\mathrm{d}W_{t}\,.
+  \]
+  Using the second form of the stochastic Schrödinger equation we obtain
+  instead
+  \[
+  \mathrm{d}\Vert\Psi\Vert^{2}=\langle\Psi|C+C^{\dagger}-a-a^{*}|\Psi\rangle\mathrm{d}W_{t}\,.
+  \]
+  If \(a=\langle\Psi(t)|C|\Psi(t)\rangle\equiv\langle C\rangle_t\) then \(\mathrm{d}\Vert\Psi\Vert^{2}=0\).
+  Thus, the stochastic Schrödinger equation
+  \[
+  \mathrm{d}|\Psi(t)\rangle=\frac{1}{\mathrm{i}\hbar}H_{\mathrm{eff}}|\Psi(t)\rangle\mathrm{d}t
+  +\frac{1}{2}\langle C\rangle_t^{*}\bigl(2C-\langle C\rangle_t\bigr)|\Psi(t)\rangle\mathrm{d}t
+  +\bigl(C-\langle C\rangle_t\bigr)|\Psi(t)\rangle\mathrm{d}W_t
+  \]
+  conserves the norm. However, this equation is explicitly nonlinear.
   </p>
 </section>
 
