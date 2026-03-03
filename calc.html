@@ -19,6 +19,7 @@ a.control { color: #a0a0ff; text-decoration: none; font-size: smaller;
 	font-family: sans-serif; float: right; clear: right; }
 </style>
 
+<script src="scripts/math.js"></script>
 <script src="calc.js"></script>
 <noscript>
 <b>JavaScript is required for calculator.</b>
@@ -49,32 +50,23 @@ a.control { color: #a0a0ff; text-decoration: none; font-size: smaller;
 <p><kbd>Enter</kbd> performs calculation.</p>
 <p><kbd>Shift+Enter</kbd> inserts new line.</p>
 <p>Variable <var>_</var> holds the result of previous calculation.</p>
-<p><b>Mathematical constants:</b> E LN2 LN10 LOG2E LOG10E PI SQRT1_2 SQRT2 DEG</p>
-<p><b>Physical constants:</b>	SpeedOfLight PlanckConstant hbar ElectronMass ProtonMass
-ElementaryCharge FineStructureConstant MagneticConstant ElectricConstant ImpedanceOfVacuum
-AvogadroConstant BoltzmannConstant MolarGasConstant AtomicMassUnit StefanBoltzmannConstant
-GravitationalConstant StandardAcceleration</p>
-<p><b>Functions:</b> exp() log() sqrt() pow() sinc()
-abs() ceil() floor() round() max() min() random()</p>
-<p><b>Trigonometric functions:</b> sin() cos() tan() cot() csc() sec()
-asin() acos() atan() atan2() acot() acsc() asec()</p>
-<p><b>Hyperbolic functions:</b> sinh() cosh() tanh() coth() csch() sech()
-asinh() acosh() atanh() acoth() acsch() asech()</p>
+<p><b>Mathematical constants:</b> E LN2 LN10 LOG2E LOG10E PI SQRT1_2 SQRT2</p>
+<p><b>Physical constants:</b> speedOfLight gravitationConstant planckConstant reducedPlanckConstant
+magneticConstant electricConstant vacuumImpedance elementaryCharge
+bohrMagneton conductanceQuantum inverseConductanceQuantum magneticFluxQuantum nuclearMagneton
+bohrRadius classicalElectronRadius electronMass protonMass deuteronMass neutronMass
+fineStructure quantumOfCirculation rydberg
+atomicMass avogadro boltzmann loschmidt gasConstant molarPlanckConstant sackurTetrode stefanBoltzmann
+molarMass gravity atm
+planckLength planckMass planckTime planckCharge planckTemperature</p>
 
 <h2>Tips</h2>
 
-Any JavaScript expression can be used. This expression is eval'ed and the result is displayed.<br>
-To define a variable:
-<pre>x = 100</pre></li>
-To define a function:
-<pre>square = function(x) { return x*x }</pre>
-To format a number using fixed-point notation:
-<pre>_.toFixed(6)</pre>
-To convert a number into an exponential notation:
-<pre>_.toExponential()</pre>
-Loops:
-<pre>sum = 0; for (let i=0; i<=5; i++) sum += i</pre>
+To define a variable: <code>x = 100</code><br>
+To define a function: <code>f(x) = x^2</code><br>
+To enter a matrix: <code>[1, 2; 3, 4]</code>
 
+<p>Powered by <a href="https://mathjs.org">mathjs.org</a></p>
 </section>
 
 <nav>
