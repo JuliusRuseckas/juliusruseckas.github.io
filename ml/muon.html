@@ -8110,7 +8110,7 @@ a.anchor-link {
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Parameter name           Shape          Optimizer"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"-------------------------------------------------"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
-    <span class="n">opt_name</span> <span class="o">=</span> <span class="s1">'Muoun'</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">muon_param_names</span> <span class="k">else</span> <span class="s1">'Adam'</span>
+    <span class="n">opt_name</span> <span class="o">=</span> <span class="s1">'Muon'</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">muon_param_names</span> <span class="k">else</span> <span class="s1">'Adam'</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s2">&lt;24</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span><span class="si">:</span><span class="s2">&lt;10</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">opt_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8130,66 +8130,66 @@ a.anchor-link {
 1.γ                      []        	Adam
 1.residual.0.0.weight    [96]      	Adam
 1.residual.0.0.bias      [96]      	Adam
-1.residual.1.weight      [96, 1, 3, 3]	Muoun
+1.residual.1.weight      [96, 1, 3, 3]	Muon
 1.residual.2.0.weight    [96]      	Adam
 1.residual.2.0.bias      [96]      	Adam
 1.residual.3.conv.weight [1, 1, 3] 	Adam
 1.residual.3.conv.bias   [1]       	Adam
-1.residual.4.weight      [96, 96, 1, 1]	Muoun
+1.residual.4.weight      [96, 96, 1, 1]	Muon
 2.γ                      []        	Adam
 2.residual.0.0.weight    [96]      	Adam
 2.residual.0.0.bias      [96]      	Adam
-2.residual.2.weight      [96, 1, 3, 3]	Muoun
+2.residual.2.weight      [96, 1, 3, 3]	Muon
 2.residual.3.0.weight    [96]      	Adam
 2.residual.3.0.bias      [96]      	Adam
 2.residual.4.conv.weight [1, 1, 3] 	Adam
 2.residual.4.conv.bias   [1]       	Adam
-2.residual.5.weight      [96, 96, 1, 1]	Muoun
+2.residual.5.weight      [96, 96, 1, 1]	Muon
 3.γ                      []        	Adam
 3.residual.0.0.weight    [96]      	Adam
 3.residual.0.0.bias      [96]      	Adam
-3.residual.1.weight      [96, 1, 3, 3]	Muoun
+3.residual.1.weight      [96, 1, 3, 3]	Muon
 3.residual.2.0.weight    [96]      	Adam
 3.residual.2.0.bias      [96]      	Adam
 3.residual.3.conv.weight [1, 1, 3] 	Adam
 3.residual.3.conv.bias   [1]       	Adam
-3.residual.4.weight      [96, 96, 1, 1]	Muoun
+3.residual.4.weight      [96, 96, 1, 1]	Muon
 4.γ                      []        	Adam
 4.residual.0.0.weight    [96]      	Adam
 4.residual.0.0.bias      [96]      	Adam
-4.residual.2.weight      [96, 1, 3, 3]	Muoun
+4.residual.2.weight      [96, 1, 3, 3]	Muon
 4.residual.3.0.weight    [96]      	Adam
 4.residual.3.0.bias      [96]      	Adam
 4.residual.4.conv.weight [1, 1, 3] 	Adam
 4.residual.4.conv.bias   [1]       	Adam
-4.residual.5.weight      [96, 96, 1, 1]	Muoun
+4.residual.5.weight      [96, 96, 1, 1]	Muon
 5.γ                      []        	Adam
 5.residual.0.0.weight    [96]      	Adam
 5.residual.0.0.bias      [96]      	Adam
-5.residual.1.weight      [96, 1, 3, 3]	Muoun
+5.residual.1.weight      [96, 1, 3, 3]	Muon
 5.residual.2.0.weight    [96]      	Adam
 5.residual.2.0.bias      [96]      	Adam
 5.residual.3.conv.weight [1, 1, 3] 	Adam
 5.residual.3.conv.bias   [1]       	Adam
-5.residual.4.weight      [96, 96, 1, 1]	Muoun
+5.residual.4.weight      [96, 96, 1, 1]	Muon
 6.γ                      []        	Adam
 6.residual.0.0.weight    [96]      	Adam
 6.residual.0.0.bias      [96]      	Adam
-6.residual.2.weight      [96, 1, 3, 3]	Muoun
+6.residual.2.weight      [96, 1, 3, 3]	Muon
 6.residual.3.0.weight    [96]      	Adam
 6.residual.3.0.bias      [96]      	Adam
 6.residual.4.conv.weight [1, 1, 3] 	Adam
 6.residual.4.conv.bias   [1]       	Adam
-6.residual.5.weight      [96, 96, 1, 1]	Muoun
+6.residual.5.weight      [96, 96, 1, 1]	Muon
 7.γ                      []        	Adam
 7.residual.0.0.weight    [96]      	Adam
 7.residual.0.0.bias      [96]      	Adam
-7.residual.1.weight      [96, 1, 3, 3]	Muoun
+7.residual.1.weight      [96, 1, 3, 3]	Muon
 7.residual.2.0.weight    [96]      	Adam
 7.residual.2.0.bias      [96]      	Adam
 7.residual.3.conv.weight [1, 1, 3] 	Adam
 7.residual.3.conv.bias   [1]       	Adam
-7.residual.4.weight      [96, 96, 1, 1]	Muoun
+7.residual.4.weight      [96, 96, 1, 1]	Muon
 8.0.0.weight             [96]      	Adam
 8.0.0.bias               [96]      	Adam
 8.4.weight               [10, 96]  	Adam
